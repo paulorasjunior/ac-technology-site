@@ -17,14 +17,37 @@ Criar uma landing page simples, rápida e profissional para:
 ---
 
 ## 🧩 Estrutura do Projeto
+
+A estrutura do projeto é simples e otimizada para hospedagem estática
+utilizando **GitHub Pages**, facilitando manutenção e evolução futura.
+
 ````
 ├── index.html
 ├── README.md
 └── LICENSE
 ````
 
-- `index.html`: arquivo principal contendo HTML e CSS integrados
-- `README.md`: documentação do projeto
+### Descrição dos arquivos
+
+- **index.html**  
+  Arquivo principal da landing page.  
+  Contém toda a estrutura HTML e o CSS incorporado, garantindo:
+  - Alta performance
+  - Facilidade de deploy
+  - Compatibilidade com GitHub Pages e Google Sites
+
+- **README.md**  
+  Documentação do projeto, contendo:
+  - Descrição
+  - Objetivo
+  - Estrutura
+  - Tecnologias utilizadas
+  - Instruções de acesso
+  - Informações de licença
+
+- **LICENSE**  
+  Arquivo de licença proprietária (**All Rights Reserved**), protegendo
+  o código e o conteúdo do projeto contra uso não autorizado.
 
 ---
 
@@ -56,6 +79,13 @@ Criar uma landing page simples, rápida e profissional para:
 Referências:
 - https://www.nngroup.com/articles/scannable-web-content/
 - https://developers.google.com/web/fundamentals
+
+---
+
+## 🌐 Como acessar o site
+
+O site está disponível em:
+👉 https://actechnology.github.io/ac-technology-site/
 
 ---
 
