@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AC Technology | Sites e Landing Pages</title>
+
+  <style>
+    :root {
+      --primary: #0F172A;
+      --secondary: #2563EB;
+      --text: #334155;
+      --bg: #F8FAFC;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: var(--white);
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+
+    .btn {
+      background: var(--secondary);
+      color: var(--white);
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .process {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .step {
+      flex: 1;
+      min-width: 150px;
+      background: var(--white);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .metrics {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .metrics h2 {
+      color: var(--white);
+    }
+
+    .metric {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    footer {
+      background: var(--primary);
+      color: var(--white);
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer p {
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header>
+    <h1>Criação de Sites e Landing Pages que Geram Resultados</h1>
+    <p>
+      A AC Technology desenvolve sites profissionais, rápidos e focados em conversão
+      para pequenos e médios negócios que querem mais clientes e mais faturamento.
+    </p>
+    <a href="#contato" class="btn">Solicitar diagnóstico gratuito</a>
+  </header>
+
+  <!-- PROBLEMA -->
+  <section>
+    <h2>O problema</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Falta de credibilidade</h3>
+        <p>Negócios sem site profissional passam menos confiança e perdem oportunidades.</p>
+      </div>
+      <div class="card">
+        <h3>Baixa conversão</h3>
+        <p>Sites lentos e mal estruturados afastam potenciais clientes.</p>
+      </div>
+      <div class="card">
+        <h3>Presença digital fraca</h3>
+        <p>Sem um site otimizado, seu negócio fica invisível para o Google.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUÇÃO -->
+  <section>
+    <h2>A solução</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Sites rápidos</h3>
+        <p>Performance otimizada para melhorar experiência e conversão.</p>
+      </div>
+      <div class="card">
+        <h3>Foco em conversão</h3>
+        <p>Estrutura pensada para gerar leads e vendas.</p>
+      </div>
+      <div class="card">
+        <h3>Design profissional</h3>
+        <p>Visual moderno, responsivo e alinhado ao seu negócio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section>
+    <h2>Como trabalhamos</h2>
+    <div class="process">
+      <div class="step">Diagnóstico</div>
+      <div class="step">Planejamento</div>
+      <div class="step">Criação</div>
+      <div class="step">Testes</div>
+      <div class="step">Publicação</div>
+      <div class="step">Métricas</div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section>
+    <h2>Diferenciais da AC Technology</h2>
+    <div class="grid">
+      <div class="card">✔ Foco em resultados reais</div>
+      <div class="card">✔ Métricas claras e objetivas</div>
+      <div class="card">✔ Processo profissional</div>
+      <div class="card">✔ Suporte e acompanhamento</div>
+    </div>
+  </section>
+
+  <!-- MÉTRICAS -->
+  <section class="metrics">
+    <h2>O que você pode esperar</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="metric">+ Leads</div>
+        <p>Mais contatos qualificados</p>
+      </div>
+      <div class="card">
+        <div class="metric">+ Conversão</div>
+        <p>Mais oportunidades de venda</p>
+      </div>
+      <div class="card">
+        <div class="metric">+ Autoridade</div>
+        <p>Presença digital profissional</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="contato">
+    <h2>Pronto para transformar seu site em uma ferramenta de vendas?</h2>
+    <p style="text-align:center; margin-bottom:30px;">
+      Solicite agora um diagnóstico gratuito e receba uma proposta personalizada.
+    </p>
+    <div style="text-align:center;">
+      <a href="mailto:contato@actechnology.com.br" class="btn">
+        Falar com a AC Technology
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>AC Technology • Uberlândia - MG</p>
+    <p>Sites e Landing Pages focados em performance e conversão</p>
+  </footer>
+
+</body>
+</html>
