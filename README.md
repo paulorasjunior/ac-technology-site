@@ -59,20 +59,6 @@ Referências:
 
 ---
 
-## 🚀 Como Executar Localmente
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   ```
-2. Acesse a pasta do projeto:
-   ```bash
-   cd ac-technology-site
-   ```
-3. Abra o arquivo index.html no navegador.
-
----
-
 ## 📄 Licença
 
 Este projeto é de propriedade da **AC Technology** e está protegido por direitos
