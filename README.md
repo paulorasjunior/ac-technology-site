@@ -69,3 +69,17 @@ Referências:
    cd ac-technology-site
    ```
 3. Abra o arquivo index.html no navegador.
+
+---
+
+## 📄 Licença
+
+Este projeto é de propriedade da **AC Technology** e está protegido por direitos
+autorais.
+
+O código e o conteúdo são disponibilizados exclusivamente para fins de
+demonstração e portfólio.  
+Não é permitida a cópia, modificação, redistribuição ou uso comercial sem
+autorização prévia.
+
+Consulte o arquivo [LICENSE](./LICENSE) para mais informações.
