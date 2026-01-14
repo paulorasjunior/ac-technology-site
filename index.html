@@ -1,252 +1,288 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AC Technology | Sites e Landing Pages</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AC Technology - Autoridade Digital com Autenticidade</title>
+  <!-- Tipografia Inter via Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #0F172A;
-      --secondary: #2563EB;
-      --text: #334155;
-      --bg: #F8FAFC;
-      --white: #ffffff;
+      --primary: #1A2236; /* Azul Marinho Profundo */
+      --secondary: #23272F; /* Cinza Grafite */
+      --background: #F5F7FA; /* Branco Off-White */
+      --surface: #E9ECEF; /* Cinza Claro */
+      --accent: #2ECC8B; /* Verde Esmeralda */
+      --accent-alt: #4F8FC0; /* Azul Sereno */
+      --text-main: #23272F;
+      --text-light: #F5F7FA;
+      --font-family: 'Inter', Arial, sans-serif;
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Inter, Arial, sans-serif;
-    }
-
     body {
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      margin: 0;
+      font-family: var(--font-family);
+      background: var(--background);
+      color: var(--text-main);
     }
-
-    header {
+    header, section, footer {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    .hero {
       background: var(--primary);
-      color: var(--white);
-      padding: 80px 20px;
+      color: var(--text-light);
       text-align: center;
+      padding: 4rem 1rem 3rem 1rem;
     }
-
-    header h1 {
-      font-size: 2.6rem;
-      margin-bottom: 20px;
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
     }
-
-    header p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 0 auto 30px;
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
     }
-
-    .btn {
-      background: var(--secondary);
-      color: var(--white);
-      padding: 15px 30px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      display: inline-block;
+    .cta-btn {
+      background: var(--accent);
+      color: var(--text-light);
+      border: none;
+      border-radius: 4px;
+      padding: 1rem 2rem;
+      font-size: 1.125rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s;
     }
-
-    section {
-      padding: 80px 20px;
-      max-width: 1100px;
-      margin: auto;
+    .cta-btn:hover, .cta-btn:focus {
+      background: var(--accent-alt);
     }
-
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      color: var(--primary);
-      text-align: center;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .card {
-      background: var(--white);
-      padding: 30px;
+    /* O Pilar da Confiança */
+    .pillar {
+      background: var(--surface);
       border-radius: 8px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      margin-top: -2rem;
+      box-shadow: 0 4px 24px rgba(26,34,54,0.05);
     }
-
-    .card h3 {
-      margin-bottom: 15px;
+    .pillar h2 {
       color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: .5rem;
     }
-
-    .process {
+    .pillar p {
+      font-size: 1.125rem;
+    }
+    /* Serviços */
+    .services {
       display: flex;
       flex-wrap: wrap;
+      gap: 2rem;
       justify-content: space-between;
-      gap: 20px;
-      text-align: center;
+      margin-top: 2rem;
     }
-
-    .step {
-      flex: 1;
-      min-width: 150px;
-      background: var(--white);
-      padding: 20px;
+    .service-card {
+      flex: 1 1 300px;
+      background: var(--background);
       border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-
-    .metrics {
-      background: var(--primary);
-      color: var(--white);
-    }
-
-    .metrics h2 {
-      color: var(--white);
-    }
-
-    .metric {
-      font-size: 2rem;
-      font-weight: bold;
-    }
-
-    footer {
-      background: var(--primary);
-      color: var(--white);
+      box-shadow: 0 2px 12px rgba(26,34,54,0.04);
+      padding: 2rem 1.5rem;
       text-align: center;
-      padding: 40px 20px;
+    }
+    .service-icon {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: .75rem;
+    }
+    .service-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: .5rem;
+    }
+    /* Sobre */
+    .about h2 {
+      color: var(--primary);
+      font-size: 2rem;
+    }
+    .about p {
+      font-size: 1.125rem;
+    }
+    /* Depoimentos */
+    .testimonials {
+      background: var(--surface);
+      border-radius: 8px;
+      padding-top: 2.5rem;
+    }
+    .testimonials h2 {
+      color: var(--primary);
+      text-align: center;
+    }
+    .testimonial-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .testimonial {
+      background: var(--background);
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(26,34,54,0.04);
+      padding: 1.5rem;
+      max-width: 350px;
+    }
+    .testimonial p {
+      font-style: italic;
+    }
+    .testimonial strong {
+      display:block; 
+      margin-top:.75rem; 
+      color:var(--accent)
+    }
+    /* FAQ */
+    .faq h2 {
+      color: var(--primary);
+    }
+    .faq-list {
+      margin-top:1.5rem
+    }
+    .faq-item {
+      margin-bottom:.75rem
+    }
+    .faq-question {
+      font-weight:bold
+    }
+    /* Contato */
+    .contact {
+      text-align:center
+    }
+    .contact h2 {
+      color:var(--primary)
+    }
+    .contact p {
+      font-size:1.125rem
+    }
+    /* Footer */
+    footer {
+      background-color: var(--secondary);
+      color: var(--text-light);
+      text-align:center;
+      padding:.75rem
     }
 
-    footer p {
-      opacity: 0.8;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
+    /* Responsivo */
+    @media (max-width:900px) {
+        .services, .testimonial-list { flex-direction:column; align-items:center;}
+        header, section, footer {padding-left:.5rem; padding-right:.5rem;}
+        .service-card {max-width:none;}
+        .testimonial {max-width:none;}
     }
   </style>
 </head>
-
 <body>
+<!-- HERO SECTION -->
+<header class="hero">
+  <!-- Modificado conforme instrução -->
+  <h1>A autenticidade é a base da sua autoridade digital.</h1>
+  <p>Projetamos plataformas que traduzem a essência do seu negócio em credibilidade, criando o ambiente de segurança que seu cliente precisa para escolher você.</p>
+  <a href="#sobre" class="cta-btn">Conheça nossa abordagem estratégica</a>
+</header>
 
-  <!-- HERO -->
-  <header>
-    <h1>Criação de Sites e Landing Pages que Geram Resultados</h1>
-    <p>
-      A AC Technology desenvolve sites profissionais, rápidos e focados em conversão
-      para pequenos e médios negócios que querem mais clientes e mais faturamento.
-    </p>
-    <a href="#contato" class="btn">Solicitar diagnóstico gratuito</a>
-  </header>
+<!-- O PILAR DA CONFIANÇA (Conexão) -->
+<section class="pillar" aria-labelledby="pillar-title">
+  <!-- Modificado conforme instrução -->
+  <h2 id="pillar-title">Onde a tecnologia encontra a segurança.</h2>
+  <p>Um negócio sem uma presença digital sólida não perde apenas vendas; ele perde a oportunidade de ser levado a sério. Na AC Technology, acreditamos que sua Landing Page deve ser uma extensão da sua competência. Criamos ferramentas de conexão que eliminam a incerteza do cliente e estabelecem um padrão de atendimento que gera conforto e conversão.</p>
+</section>
 
-  <!-- PROBLEMA -->
-  <section>
-    <h2>O problema</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Falta de credibilidade</h3>
-        <p>Negócios sem site profissional passam menos confiança e perdem oportunidades.</p>
-      </div>
-      <div class="card">
-        <h3>Baixa conversão</h3>
-        <p>Sites lentos e mal estruturados afastam potenciais clientes.</p>
-      </div>
-      <div class="card">
-        <h3>Presença digital fraca</h3>
-        <p>Sem um site otimizado, seu negócio fica invisível para o Google.</p>
-      </div>
+<!-- SERVIÇOS / SOLUÇÕES ESTRUTURADAS -->
+<section class="services" aria-label="Soluções Estruturadas">
+  <!-- Modificado conforme instrução -->
+  
+  <div class="service-card">
+    <span class="service-icon" aria-hidden="true">🛡️</span><!-- Ícone escudo -->
+    <h3>Presença Digital Autêntica.</h3>
+    <p>Desenvolvimento de websites que refletem a verdade da sua marca, garantindo que sua imagem online seja tão profissional quanto o seu serviço offline.</p>
+  </div>
+  
+  <div class="service-card">
+    <span class="service-icon" aria-hidden="true">📈</span><!-- Ícone gráfico ascendente -->
+    <h3>Arquitetura de Conversão e Confiança.</h3>
+    <p>Landing pages estruturadas para guiar o cliente em uma jornada segura, onde cada elemento visual reforça sua autoridade no mercado.</p>
+  </div>
+  
+  <div class="service-card">
+    <span class="service-icon" aria-hidden="true">🤝</span><!-- Ícone mãos dadas -->
+    <h3>Design de Conexão (UX/UI).</h3>
+    <p>Interfaces intuitivas que priorizam o conforto do usuário, facilitando o diálogo entre sua empresa e quem busca por suas soluções.</p>
+  </div>
+</section>
+
+<!-- SOBRE (A CONSULTORIA) -->
+<section class="about" id="sobre" aria-labelledby="about-title">
+  <!-- Modificado conforme instrução -->
+  <h2 id="about-title">Tecnologia com propósito e transparência.</h2>
+  <p>A AC Technology, liderada por Paulo Junior, atua como um braço estratégico para empresas que buscam elevar seu posicionamento. Nosso compromisso é com a entrega de resultados reais através da autenticidade. Não buscamos apenas o moderno, buscamos o que é sólido e confiável para o seu crescimento a longo prazo.</p>
+</section>
+
+<!-- DEPOIMENTOS / PROVA SOCIAL -->
+<section class="testimonials" aria-labelledby="testimonials-title">
+  <!-- Adicionado conforme instrução -->
+  <h2 id="testimonials-title">O que nossos clientes dizem</h2>
+  <div class="testimonial-list">
+    
+    <div class="testimonial">
+        <p>"Depois do novo site da AC Technology, nossos clientes passaram a confiar muito mais na nossa empresa. A percepção de valor mudou completamente."</p>
+        <strong>— Mariana Silva, CEO da Conecta Saúde</strong>
     </div>
-  </section>
-
-  <!-- SOLUÇÃO -->
-  <section>
-    <h2>A solução</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Sites rápidos</h3>
-        <p>Performance otimizada para melhorar experiência e conversão.</p>
-      </div>
-      <div class="card">
-        <h3>Foco em conversão</h3>
-        <p>Estrutura pensada para gerar leads e vendas.</p>
-      </div>
-      <div class="card">
-        <h3>Design profissional</h3>
-        <p>Visual moderno, responsivo e alinhado ao seu negócio.</p>
-      </div>
+    
+    <div class="testimonial">
+        <p>"A equipe entendeu exatamente o que precisávamos transmitir. Hoje recebemos elogios pela clareza e profissionalismo da nossa presença digital."</p>
+        <strong>— Ricardo Lopes, Diretor da Inova Engenharia</strong>
     </div>
-  </section>
 
-  <!-- PROCESSO -->
-  <section>
-    <h2>Como trabalhamos</h2>
-    <div class="process">
-      <div class="step">Diagnóstico</div>
-      <div class="step">Planejamento</div>
-      <div class="step">Criação</div>
-      <div class="step">Testes</div>
-      <div class="step">Publicação</div>
-      <div class="step">Métricas</div>
-    </div>
-  </section>
+     <div class="testimonial">
+        <p>"A transformação foi além do visual — agora nossos leads chegam mais preparados e confiantes para fechar negócio."</p>
+        <strong>— Fernanda Costa, Sócia da Prime Consultoria</strong>
+     </div>
 
-  <!-- DIFERENCIAIS -->
-  <section>
-    <h2>Diferenciais da AC Technology</h2>
-    <div class="grid">
-      <div class="card">✔ Foco em resultados reais</div>
-      <div class="card">✔ Métricas claras e objetivas</div>
-      <div class="card">✔ Processo profissional</div>
-      <div class="card">✔ Suporte e acompanhamento</div>
-    </div>
-  </section>
+   </div>
+</section>
 
-  <!-- MÉTRICAS -->
-  <section class="metrics">
-    <h2>O que você pode esperar</h2>
-    <div class="grid">
-      <div class="card">
-        <div class="metric">+ Leads</div>
-        <p>Mais contatos qualificados</p>
-      </div>
-      <div class="card">
-        <div class="metric">+ Conversão</div>
-        <p>Mais oportunidades de venda</p>
-      </div>
-      <div class="card">
-        <div class="metric">+ Autoridade</div>
-        <p>Presença digital profissional</p>
-      </div>
-    </div>
-  </section>
+<!-- FAQ -->
+<section class="faq" aria-labelledby="faq-title">
+   <!-- Adicionado conforme instrução -->
+   <h2 id="faq-title">Perguntas Frequentes</h2>
+   <div class="faq-list">
+     <div class="faq-item">
+       <span class="faq-question">Como a AC Technology garante que meu site transmita confiança?</span><br>
+       <span>Trabalhamos com uma metodologia focada em autenticidade e usabilidade. Cada elemento é pensado para reforçar sua autoridade e criar um ambiente seguro para o cliente.</span>
+     </div>
+     <div class="faq-item">
+       <span class="faq-question">O que está incluso no desenvolvimento da landing page?</span><br>
+       <span>Incluímos análise estratégica, design personalizado (UX/UI), implementação responsiva e integração com ferramentas essenciais para conversão.</span>
+     </div>
+     <div class="faq-item">
+       <span class="faq-question">Posso acompanhar o processo de criação?</span><br>
+       <span>Sim! Mantemos comunicação transparente em todas as etapas e você participa das decisões-chave para garantir que o resultado final reflita sua essência.</span>
+     </div>
+   </div>
+</section>
 
-  <!-- CTA FINAL -->
-  <section id="contato">
-    <h2>Pronto para transformar seu site em uma ferramenta de vendas?</h2>
-    <p style="text-align:center; margin-bottom:30px;">
-      Solicite agora um diagnóstico gratuito e receba uma proposta personalizada.
-    </p>
-    <div style="text-align:center;">
-      <a href="mailto:contato@actechnology.com.br" class="btn">
-        Falar com a AC Technology
-      </a>
-    </div>
-  </section>
+<!-- CONTATO / FECHAMENTO -->
+<section class="contact" aria-labelledby="contact-title">
+   <!-- Modificado conforme instrução -->
+   <h2 id="contact-title">Vamos elevar o nível de credibilidade do seu negócio?</h2>
+   <p>Estabeleça hoje a conexão que o seu cliente merece encontrar.</p>
+   <a href="mailto:contato@actechnology.com.br" class="cta-btn">Agendar uma conversa estratégica</a>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>AC Technology • Uberlândia - MG</p>
-    <p>Sites e Landing Pages focados em performance e conversão</p>
-  </footer>
+<!-- FOOTER -->
+<footer>
+   <!-- Atualizado para refletir novo posicionamento -->
+   &copy; <?php echo date('Y'); ?> AC Technology — Autenticidade e Autoridade Digital.<br/>
+   Desenvolvido por Paulo Junior.
+</footer>
 
 </body>
 </html>
