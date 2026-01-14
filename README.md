@@ -19,7 +19,8 @@ Criar uma landing page simples, rápida e profissional para:
 ## 🧩 Estrutura do Projeto
 ````
 ├── index.html
-└── README.md
+├── README.md
+└── LICENSE
 ````
 
 - `index.html`: arquivo principal contendo HTML e CSS integrados
