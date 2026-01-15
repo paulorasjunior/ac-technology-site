@@ -2,333 +2,171 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AC Technology | Landing Pages & Websites</title>
-  <!-- Tipografia Inter via Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AC Technology</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #1A2236;
-      --secondary: #23272F;
-      --background: #F5F7FA;
-      --surface: #E9ECEF;
-      --accent: #2ECC8B;
-      --accent-alt: #4F8FC0;
-      --text-main: #23272F;
-      --text-light: #F5F7FA;
-      --font-family: 'Inter', Arial, sans-serif;
-    }
-    html {
-      scroll-behavior: smooth;
+      --dark-blue: #0d1321;
+      --blue: #1d2d44;
+      --mid-blue: #3e5c76;
+      --light-blue: #748cab;
+      --beige: #f0ebd8;
     }
     body {
       margin: 0;
-      font-family: var(--font-family);
-      color: var(--text-main);
-      /* Gradiente animado */
-      min-height: 100vh;
-      background: linear-gradient(120deg, #1A2236 0%, #23272F 50%, #4F8FC0 100%);
-      background-size: 200% 200%;
-      animation: gradientBG 10s ease-in-out infinite;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--dark-blue);
+      color: var(--beige);
     }
-    @keyframes gradientBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-    /* Cabeçalho fixo */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(26,34,54,0.95);
-      box-shadow: 0 2px 12px rgba(26,34,54,0.08);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: .5rem 0;
-      transition: background .3s;
-    }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-    .nav-links a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: .02em;
-      padding-bottom: .25rem;
-      border-bottom: 2px solid transparent;
-      transition: color .2s, border-color .3s;
-    }
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--accent);
-      border-bottom: 2px solid var(--accent);
-    }
-    /* Logo centralizada */
-    .logo-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 2.5rem;
-      margin-bottom: .5rem;
-    }
-    .logo-container img {
-      width: 340px; max-width: 90vw; height: auto;
-      filter: drop-shadow(0px 4px 24px rgba(79,143,192,0.15));
-      transition: transform .4s cubic-bezier(.4,2,.6,1);
-    }
-    .logo-container img:hover {
-      transform: scale(1.03) rotate(-2deg);
-    }
-    /* Hero Section */
-    header.hero {
-      background: transparent;
-      color: var(--text-light);
+    header, section {
+      padding: 60px 20px;
       text-align: center;
-      padding-top: 1.5rem;
-      padding-bottom: 3rem;
     }
-    .hero h1 {
-      font-size: 2.7rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      letter-spacing:.01em;
-      text-shadow:0px 2px 16px rgba(26,34,54,.18);
+    header {
+      background: linear-gradient(135deg, var(--dark-blue), var(--blue));
     }
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      color:#E9ECEF;
+    .logo {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .headline {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .subheadline {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
     }
     .cta-btn {
-      background-image: linear-gradient(90deg,var(--accent),var(--accent-alt));
-      color: var(--text-light);
-      border:none; outline:none;
-      border-radius:32px;
-      padding:.9rem 2.2rem;
-      font-size:1.15rem; font-weight:600; letter-spacing:.01em;
-      cursor:pointer; box-shadow:0px 4px 24px rgba(46,204,139,.08);
-      transition:.25s cubic-bezier(.4,2,.6,1);
+      background: var(--light-blue);
+      color: var(--dark-blue);
+      border: none;
+      padding: 15px 40px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background .3s;
     }
-    .cta-btn:hover,.cta-btn:focus {
-        background-image: linear-gradient(90deg,var(--accent-alt),var(--accent));
-        transform: translateY(-2px) scale(1.04);
-        box-shadow:0px 8px 32px rgba(46,204,139,.13);
-        outline:auto var(--accent-alt);
+    .cta-btn:hover {
+      background: var(--beige);
     }
-    /* Seções principais */
-    main, section, footer {
-        width:100%;
-        max-width:1200px; margin:auto; padding-left:.5rem; padding-right:.5rem;
-        box-sizing:border-box
-    }
-    section {margin-bottom:2.5rem;}
-    /* Pilar da Confiança */
-    .pillar {
-        background-color:#ffffff18; /* leve transparência */
-        border-radius:16px; margin-top:-2rem; box-shadow:0 4px 24px rgba(26,34,54,.09);
-        backdrop-filter:saturate(120%) blur(3px);
-        transition:.3s box-shadow,.3s background-color;
-        padding-top:2.5rem; padding-bottom:.5rem
-    }
-    .pillar h2 {color:#fff;font-size:2.1rem;margin-bottom:.5rem;}
-    .pillar p {font-size:1.15rem;color:#E9ECEF;}
-    /* Serviços */
     .services {
-        display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; margin-top:2rem
+      background: var(--mid-blue);
+    }
+    .services-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
     }
     .service-card {
-        flex:1 1 300px; min-width:260px; max-width:340px; background:#ffffff22; border-radius:14px;
-        box-shadow:0 2px 16px rgba(26,34,54,.07); padding:2rem 1.5rem; text-align:center; 
-        transition:.3s box-shadow,.3s transform,.3s background-color
+      background: var(--blue);
+      color: var(--beige);
+      border-radius: 16px;
+      padding: 30px 20px;
+      width: 300px;
+      box-shadow: 0 4px 24px rgba(13,19,33,0.15);
     }
-    .service-card:hover {box-shadow:0 8px 32px rgba(46,204,139,.13); transform:translateY(-4px) scale(1.03); background:#ffffff33;}
-    .service-icon {font-size:2.5rem;color:#2ECC8B;margin-bottom:.75rem;transition:.3s;}
-    .service-card:hover .service-icon {color:#4F8FC0;}
-    .service-card h3 {font-size:1.25rem;margin-bottom:.5rem;color:#fff;}
-    .service-card p {color:#E9ECEF;}
-    /* Sobre */
-    .about h2 {color:#fff;font-size:2rem;}
-    .about p {font-size:1.125rem;color:#E9ECEF;}
-    /* Depoimentos */
-    .testimonials {background:#ffffff18;border-radius:14px;padding-top:2.5rem;}
-    .testimonials h2 {color:#fff;text-align:center;}
-    .testimonial-list {display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;margin-top:1.5rem;}
-    .testimonial {
-        background:#ffffff22;border-radius:12px;box-shadow:0 2px 12px rgba(26,34,54,.04);padding:1.5rem;max-width:350px;transition:.3s
+    .about {
+      background: var(--beige);
+      color: var(--dark-blue);
     }
-    .testimonial:hover {background:#ffffff33;}
-    .testimonial p {font-style:italic;color:#E9ECEF;}
-    .testimonial strong {display:block;margin-top:.75rem;color:#2ECC8B}
-    /* FAQ */
-    .faq h2 {color:#fff;}
-    .faq-list {margin-top:1.5rem}
-    .faq-item {margin-bottom:.75rem;background:#ffffff18;padding:.75rem;border-radius:.5em;color:#E9ECEF;}
-    .faq-question {font-weight:bold;color:#4F8FC0}
-    /* Contato */
-    .contact {text-align:center}
-    .contact h2 {color:#fff}
-    .contact p {font-size:1.125rem;color:#E9ECEF}
-    /* Footer */
-    footer {
-        background-color:#23272Fcc;color:#E9ECEF;text-align:center;padding:.75rem;border-radius:.5em;margin-top:.5em;font-size:.98em
+    .reviews {
+      background: var(--light-blue);
+      color: var(--dark-blue);
     }
-    /* Responsivo */
-    @media (max-width:900px) {
-        .services,.testimonial-list{flex-direction:column;align-items:center;}
-        main,section,footer{padding-left:.5rem;padding-right:.5rem;}
-        .service-card{max-width:none;}
-        .testimonial{max-width:none;}
-        .logo-container img{width:min(90vw,220px);}
-        .nav-links{gap:.7em;}
-        header.hero{padding-top:.7em;}
-        .hero h1{font-size:2em;}
-        section{margin-bottom:.7em;}
-        .pillar h2{font-size:1.3em;}
-        .about h2{font-size:1.3em;}
-        .faq h2{font-size:1.3em;}
-        .testimonials h2{font-size:1.3em;}
-        .contact h2{font-size:1.3em;}
-     }
-     /* Suavidade nas transições globais */
-     * {transition-property:border-color,color,background,box-shadow,transform;transition-duration:.25s;}
-     ::selection{background:#4F8FC099;color:#fff}
-     /* Scroll suave para âncoras */
-     html {scroll-behavior:smooth;}
-   </style>
-   <script>
-     // Ativa classe 'active' no menu conforme rolagem
-     document.addEventListener('DOMContentLoaded', function() {
-       const sections = ['hero','pillar','services','sobre','testimonials','faq','contact'];
-       const navLinks = document.querySelectorAll('.nav-links a');
-       window.addEventListener('scroll', function() {
-         let fromTop = window.scrollY + window.innerHeight/4;
-         navLinks.forEach(link => link.classList.remove('active'));
-         for(let i=sections.length-1;i>=0;i--){
-           let sec = document.getElementById(sections[i]);
-           if(sec && sec.offsetTop <= fromTop){
-             let link = document.querySelector('.nav-links a[href="#'+sections[i]+'"]');
-             if(link) link.classList.add('active');
-             break;
-           }
-         }
-       });
-     });
-   </script>
+    .reviews-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .review-card {
+      background: var(--beige);
+      color: var(--dark-blue);
+      border-radius: 16px;
+      padding: 25px 18px;
+      width: 280px;
+    }
+    .contact {
+      background: var(--blue);
+    }
+    form {
+      max-width: 400px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+    textarea { resize: vertical; min-height: 80px; }
+    @media (max-width: 800px) {
+      .services-cards, .reviews-cards { flex-direction: column; align-items: center; }
+    }
+  </style>
 </head>
 <body>
-<!-- NAVBAR FIXO -->
-<nav class="navbar">
-   <div class="nav-links">
-     <a href="#hero" class="active">Início</a>
-     <a href="#pillar">Confiança</a>
-     <a href="#services">Soluções</a>
-     <a href="#sobre">Sobre</a>
-     <a href="#testimonials">Depoimentos</a>
-     <a href="#faq">FAQ</a>
-     <a href="#contact">Contato</a>
-   </div>
-</nav>
-
-<!-- LOGO CENTRALIZADA -->
-<div class="logo-container" id="hero">
-   <img src="header-img.png" alt="Imagem do cabeçalho AC Technology" loading="lazy">
-</div>
-
-<!-- HERO SECTION -->
-<header class="hero">  
-   <h1>A autenticidade é a base da autoridade digital.</h1>
-   <p>Projetamos a página ideal para o seu negócio, expondo a essência da sua marca, gerando credibilidade e criando a conexão que seu cliente precisa para escolher você.</p>
-   <a href="#sobre" class="cta-btn">Agende uma consultoria!</a>
+<header id="home">
+  <div class="logo">AC Technology</div>
+  <div class="headline">Transforme sua presença digital com autenticidade e performance</div>
+  <div class="subheadline">Consultoria e criação de Landing Pages e Websites profissionais para pequenos e médios negócios.</div>
+  <a href="#contato"><button class="cta-btn">Solicite um Orçamento</button></a>
 </header>
 
-<main>
-<!-- O PILAR DA CONFIANÇA (Conexão) -->
-<section class="pillar" id="pillar" aria-labelledby="pillar-title">
-   <h2 id="pillar-title">Onde a tecnologia encontra a segurança.</h2>
-   <p>Um negócio sem uma presença digital sólida não perde apenas vendas; ele perde a oportunidade de ser levado a sério. Na AC Technology, acreditamos que sua Landing Page deve ser uma extensão da sua competência. Criamos ferramentas de conexão que eliminam a incerteza do cliente e estabelecem um padrão de atendimento que gera conforto e conversão.</p>
+<section class="services" id="servicos">
+  <h2>Nossos Serviços</h2>
+  <div class="services-cards">
+    <div class="service-card">
+      <h3>Consultoria Digital</h3>
+      <p>Estratégias personalizadas para seu negócio crescer online.</p>
+    </div>
+    <div class="service-card">
+      <h3>Landing Pages Profissionais</h3>
+      <p>Páginas otimizadas para conversão, com design exclusivo.</p>
+    </div>
+    <div class="service-card">
+      <h3>Websites Sob Medida</h3>
+      <p>Sites completos, responsivos e com total propriedade digital.</p>
+    </div>
+  </div>
 </section>
 
-<!-- SERVIÇOS / SOLUÇÕES ESTRUTURADAS -->
-<section class="services" id="services" aria-label="Soluções Estruturadas">
-   <div class="service-card">
-     <span class="service-icon" aria-hidden="true">🛡️</span>
-     <h3>Presença Digital Autêntica.</h3>
-     <p>Desenvolvimento de websites que refletem a verdade da sua marca, garantindo que sua imagem online seja tão profissional quanto o seu serviço offline.</p>
-   </div>
-   <div class="service-card">
-     <span class="service-icon" aria-hidden="true">📈</span>
-     <h3>Arquitetura de Conversão e Confiança.</h3>
-     <p>Landing pages estruturadas para guiar o cliente em uma jornada segura, onde cada elemento visual reforça sua autoridade no mercado.</p>
-   </div>
-   <div class="service-card">
-     <span class="service-icon" aria-hidden="true">🤝</span>
-     <h3>Design de Conexão (UX/UI).</h3>
-     <p>Interfaces intuitivas que priorizam o conforto do usuário, facilitando o diálogo entre sua empresa e quem busca por suas soluções.</p>
-   </div>
+<section class="about" id="sobre">
+  <h2>Sobre a AC Technology</h2>
+  <p>Somos especialistas em criar experiências digitais autênticas, focadas em performance e resultados reais. Ajudamos pequenos e médios negócios a conquistarem sua presença online com autonomia e qualidade.</p>
 </section>
 
-<!-- SOBRE (A CONSULTORIA) -->
-<section class="about" id="sobre" aria-labelledby="about-title">
-   <h2 id="about-title">Tecnologia com propósito e transparência.</h2>
-   <p>A AC Technology, liderada por Paulo Junior, atua como um braço estratégico para empresas que buscam elevar seu posicionamento. Nosso compromisso é com a entrega de resultados reais através da autenticidade. Não buscamos apenas o moderno, buscamos o que é sólido e confiável para o seu crescimento a longo prazo.</p>
+<section class="reviews" id="avaliacoes">
+  <h2>O que dizem nossos clientes</h2>
+  <div class="reviews-cards">
+    <div class="review-card">
+      "A AC Technology transformou meu site! Atendimento excelente e resultado acima do esperado."<br><br><b>— Cliente 1</b>
+    </div>
+    <div class="review-card">
+      "Minha landing page ficou incrível e já aumentou minhas conversões."<br><br><b>— Cliente 2</b>
+    </div>
+  </div>
 </section>
 
-<!-- DEPOIMENTOS / PROVA SOCIAL -->
-<section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
-   <h2 id="testimonials-title">O que nossos clientes dizem</h2>
-   <div class="testimonial-list">
-     <div class="testimonial">
-         <p>"Depois do novo site da AC Technology, nossos clientes passaram a confiar muito mais na nossa empresa. A percepção de valor mudou completamente."</p>
-         <strong>— Mariana Silva, CEO da Conecta Saúde</strong>
-     </div>
-     <div class="testimonial">
-         <p>"A equipe entendeu exatamente o que precisávamos transmitir. Hoje recebemos elogios pela clareza e profissionalismo da nossa presença digital."</p>
-         <strong>— Ricardo Lopes, Diretor da Inova Engenharia</strong>
-     </div>
-     <div class="testimonial">
-         <p>"A transformação foi além do visual — agora nossos leads chegam mais preparados e confiantes para fechar negócio."</p>
-         <strong>— Fernanda Costa, Sócia da Prime Consultoria</strong>
-     </div>
-   </div>
+<section class="contact" id="contato">
+  <h2>Fale Conosco</h2>
+  <form>
+    <input type="text" placeholder="Nome" required>
+    <input type="email" placeholder="E-mail" required>
+    <textarea placeholder="Mensagem" required></textarea>
+    <button type="submit" class="cta-btn">Enviar</button>
+  </form>
 </section>
-
-<!-- FAQ -->
-<section class="faq" id="faq" aria-labelledby="faq-title">
-   <h2 id="faq-title">Perguntas Frequentes</h2>
-   <div class="faq-list">
-     <div class="faq-item">
-       <span class="faq-question">Como a AC Technology garante que meu site transmita confiança?</span><br>
-       <span>Trabalhamos com uma metodologia focada em autenticidade e usabilidade. Cada elemento é pensado para reforçar sua autoridade e criar um ambiente seguro para o cliente.</span>
-     </div>
-     <div class="faq-item">
-       <span class="faq-question">O que está incluso no desenvolvimento da landing page?</span><br>
-       <span>Incluímos análise estratégica, design personalizado (UX/UI), implementação responsiva e integração com ferramentas essenciais para conversão.</span>
-     </div>
-     <div class="faq-item">
-       <span class="faq-question">Posso acompanhar o processo de criação?</span><br>
-       <span>Sim! Mantemos comunicação transparente em todas as etapas e você participa das decisões-chave para garantir que o resultado final reflita sua essência.</span>
-     </div>
-   </div>
-</section>
-
-<!-- CONTATO / FECHAMENTO -->
-<section class="contact" id="contact" aria-labelledby="contact-title">
-   <h2 id="contact-title">Vamos elevar o nível de credibilidade do seu negócio?</h2>
-   <p>Estabeleça hoje a conexão que o seu cliente merece encontrar.</p>
-   <a href="mailto:contato@actechnology.com.br" class="cta-btn">Agendar uma conversa estratégica</a>
-</section>
-
-</main>
-
-<footer>
-   &copy; <?php echo date('Y'); ?> AC Technology — Autenticidade e Autoridade Digital.<br/>
-   Desenvolvido por Paulo Junior.
-</footer>
 
 </body>
 </html>
