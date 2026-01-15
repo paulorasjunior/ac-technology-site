@@ -12,6 +12,8 @@
       --mid-blue: #3e5c76;
       --light-blue: #748cab;
       --beige: #f0ebd8;
+      --green: #4ad991;
+      --yellow: #ffe066;
     }
     html { scroll-behavior: smooth; }
     body {
@@ -23,9 +25,9 @@
     header {
       position: relative;
       width: 100vw;
-      min-height: 350px;
+      min-height: 380px;
       height: 45vw;
-      max-height: 480px;
+      max-height: 520px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -33,148 +35,296 @@
       box-shadow: 0 4px 24px rgba(13,19,33,0.10);
     }
     .header-overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(13,19,33,0.45); /* Suaviza o texto sobre o banner */
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(13,19,33,0.55);
       z-index: 1;
     }
     .header-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      width: 100%;
+      position: relative; z-index: 2; text-align: center; width: 100%;
+      color: var(--beige);
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
     }
-    .cta-btn {
+    .header-content h1 {
+      font-size: 2.3rem; font-weight: bold; margin-bottom: 12px; letter-spacing:.5px;
+    }
+    .header-content p {
+      font-size: 1.15rem; margin-bottom: 18px; max-width:600px; margin-left:auto; margin-right:auto;
+    }
+    .header-badges {
+      display:flex; gap:18px; justify-content:center; margin-bottom:18px; flex-wrap:wrap;
+    }
+    .header-badge {
+      background: rgba(255,255,255,0.10); border-radius:20px; padding:7px 18px; font-size:.98rem; display:flex; align-items:center; gap:7px;
+    }
+    .header-cta-group {
+      display:flex; gap:16px; justify-content:center; margin-bottom:18px; flex-wrap:wrap;
+    }
+    .cta-btn, .whatsapp-btn {
       background: var(--light-blue);
       color: var(--dark-blue);
-      border: none;
-      padding: 15px 40px;
+      border:none;
+      padding: 15px 38px;
       border-radius: 30px;
       font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background .4s, transform .3s, box-shadow .3s;
-      box-shadow: 0 2px 12px rgba(13,19,33,0.10);
+      font-weight:bold;
+      cursor:pointer;
+      transition:.3s;
+      box-shadow:0 2px 12px rgba(13,19,33,0.10);
+      text-decoration:none;
+      display:inline-block;
     }
-    .cta-btn:hover {
+    .cta-btn:hover, .whatsapp-btn:hover {
       background: var(--beige);
       color: var(--dark-blue);
       transform: translateY(-3px) scale(1.04);
-      box-shadow: 0 6px 24px rgba(13,19,33,0.18);
+      box-shadow:0 6px 24px rgba(13,19,33,0.18);
     }
-    section { padding: 60px 20px; text-align: center; }
-    .services { background: var(--mid-blue); }
+    .whatsapp-btn {
+      background:#25D366;color:#fff;padding-left:32px;padding-right:32px;position:relative;
+    }
+    .whatsapp-btn::before {
+      content:"";
+      display:inline-block;
+      width:20px;height:20px;background:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg') no-repeat center/contain;
+      vertical-align:-4px;margin-right:8px;filter:brightness(0) invert(1);
+    }
+    .header-hours {font-size:.98rem;color:#e6e6e6;}
+    section { padding:60px 20px; text-align:center;}
+    h2 {font-size:2rem;margin-bottom:.7em;}
+    /* Serviços */
+    .services { background: var(--mid-blue);}
     .services-cards {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px;
+      display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:30px;
     }
     .service-card {
-      background: var(--blue); color: var(--beige); border-radius: 16px;
-      padding: 30px 20px 20px 20px; width: 320px;
-      box-shadow: 0 4px 24px rgba(13,19,33,0.15);
-      transition: transform .3s, box-shadow .3s;
-      display: flex; flex-direction: column; align-items: center;
+      background: var(--blue); color: var(--beige); border-radius:16px;
+      padding:30px 22px 22px 22px; width:320px;
+      box-shadow:0 4px 24px rgba(13,19,33,0.15);
+      transition:.3s;
+      display:flex; flex-direction:column; align-items:center;
     }
-    .service-card:hover {
-      transform: translateY(-6px) scale(1.03);
-      box-shadow: 0 12px 32px rgba(13,19,33,0.22);
+    .service-card:hover {transform:translateY(-6px) scale(1.03);box-shadow:0 12px 32px rgba(13,19,33,0.22);}
+    .service-icon {font-size:2.5rem;margin-bottom:.7em;}
+    .service-card h3 {margin-bottom:.5em;}
+    /* Indicadores/Diferenciais */
+    .indicators-row {
+      display:flex; gap:30px; justify-content:center; flex-wrap:wrap;margin-top:30px;margin-bottom:-10px;
     }
-    .service-img {
-      width: 100%; max-width: 260px; height: 140px; object-fit: cover;
-      border-radius: 10px; margin-bottom: 18px;
+    .indicator-card {
+      background:#fff2;border-radius:14px;padding:22px 28px;color:#fff;font-weight:bold;font-size:.98rem;min-width:180px;text-align:center;border-left:4px solid var(--green);box-shadow:0 2px 12px rgba(13,19,33,.08);
     }
-    .about { background: var(--beige); color: var(--dark-blue); }
-    .reviews { background: var(--light-blue); color: var(--dark-blue); }
-    .reviews-cards {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px;
+    .indicator-card strong {font-size:1.5em;color:#4ad991;}
+    /* CTA intermediário */
+    .cta-section {background:#fff1;border-radius:18px;padding:36px 18px;margin-top:-30px;margin-bottom:-30px;}
+    /* Sobre */
+    .about {background:#f0ebd8;color:#0d1321;}
+    .about-diffs-row {
+      display:flex;gap:24px;justify-content:center;margin-top:28px;margin-bottom:-10px;flex-wrap:wrap;
     }
+    .about-diff-card {
+      background:#fff9;border-radius:12px;padding:18px 20px;color:#222;font-size:.98rem;width:min(220px,90vw);box-shadow:0 2px 12px rgba(13,19,33,.07);display:flex;align-items:center;gap:.7em;font-weight:bold;margin-bottom:.5em;
+    }
+    .about-diff-card svg {width:22px;height:auto;}
+    /* Depoimentos */
+    .reviews {background:#748cab;color:#0d1321;}
+    .reviews-cards {display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-top:30px;}
     .review-card {
-      background: var(--beige); color: var(--dark-blue); border-radius: 16px;
-      padding: 25px 18px; width: 280px; transition: box-shadow .3s, transform .3s;
+      background:#f0ebd8;color:#0d1321;border-radius:16px;padding:25px 18px;width:min(320px,95vw);transition:.3s;font-style:italic;font-size:.99rem;border-left:.25em solid var(--light-blue);box-shadow:0 4px 24px rgba(13,19,33,.10);
     }
-    .review-card:hover {
-      box-shadow: 0 8px 28px rgba(13,19,33,0.18); transform: scale(1.03);
+    .review-card b {display:block;margin-top:.8em;font-style:normal;}
+    /* Contato */
+    .contact {background:#1d2d44;}
+    form {max-width:400px;margin:auto;display:flex;flex-direction:column;gap:15px;}
+    input, textarea {padding:12px;border-radius:8px;border:none;font-size:1rem;}
+    textarea {resize:vertical;min-height:80px;}
+    input[type="submit"], button[type="submit"] {transition:.4s;}
+    input[type="submit"]:hover, button[type="submit"]:hover {background-color:#f0ebd8;color:#0d1321;transform:scale(1.04)}
+    /* Footer */
+    footer {
+      background:#101522;color:#f0ebd8;text-align:center;padding-top:.9em;padding-bottom:.9em;font-size:.98rem;margin-top:-10px;
+      border-top:.5em solid var(--mid-blue);
     }
-    .contact { background: var(--blue); }
-    form { max-width: 400px; margin:auto; display:flex; flex-direction:column; gap:15px;}
-    input, textarea { padding:12px; border-radius:8px; border:none; font-size:1rem;}
-    textarea { resize:vertical; min-height:80px;}
-    input[type="submit"], button[type="submit"] { transition:.4s;}
-    input[type="submit"]:hover, button[type="submit"]:hover { background-color:#f0ebd8;color:#0d1321;transform:scale(1.04)}
+    /* Responsivo */
     @media (max-width:900px) {
-      header { height: 38vw; min-height:180px;}
-      .services-cards,.reviews-cards{flex-direction:column;align-items:center}
-      .service-card{width:95%}
-      .review-card{width:95%}
+      header {height:auto;min-height:180px;}
+      .services-cards,.reviews-cards,.indicators-row,.about-diffs-row{flex-direction:column;align-items:center}
+      .service-card,.review-card,.indicator-card{width:min(95vw,340px);}
     }
     @media (max-width:600px) {
-      header { height:auto; min-height:120px;}
+      header {height:auto;min-height:120px;}
+      section{padding-left:.5em;padding-right:.5em;}
+      h2{font-size:1.3em;}
     }
   </style>
 </head>
 <body>
+
 <header id="home">
   <div class="header-overlay"></div>
   <div class="header-content">
-    <!-- Se quiser adicionar texto ou logo sobre o banner, coloque aqui -->
-    <a href="#contato"><button class="cta-btn">Solicite um Orçamento</button></a>
+    <h1>Especialistas em Criação de Sites e Landing Pages Profissionais</h1>
+    <p>Soluções digitais sob medida para empresas que querem <b>mais visibilidade</b>, <b>mais autoridade</b> e <b>mais conversões online</b>. Desenvolvemos sites rápidos, modernos e focados em resultados reais para o seu negócio.</p>
+    
+    <div class="header-badges">
+        <span class="header-badge">⭐⭐⭐⭐⭐ Projetos avaliados positivamente</span>
+        <span class="header-badge">📍 Uberlândia – MG e todo o Brasil</span>
+        <span class="header-badge"><b>500+</b> projetos entregues</span>
+    </div>
+    
+    <div class="header-cta-group">
+        <a href="#contato" class="cta-btn">Solicitar Orçamento</a>
+        <a href="https://wa.me/5534992221407" target="_blank" class="whatsapp-btn">Falar no WhatsApp</a>
+    </div>
+    
+    <div class="header-hours">
+        <b>Horário:</b> Segunda a Sexta:&nbsp;09h–18h | Sábado:&nbsp;09h–12h
+    </div>
   </div>
 </header>
 
 <section class="services" id="servicos">
   <h2>Nossos Serviços</h2>
+  <p>Soluções completas para fortalecer sua presença digital e aumentar seus resultados.</p>
+  
   <div class="services-cards">
+    
     <div class="service-card">
-      <img class="service-img" src="card-1-img.jpg" alt="UI/UX Example">
-      <h3>Consultoria Digital</h3>
-      <p>Estratégias personalizadas para seu negócio crescer online.</p>
+        <div class="service-icon">🧪</div>
+        <h3>Diagnóstico Gratuito</h3>
+        <p>Análise inicial do seu site ou ideia digital.<br><b>Pontos de melhoria e sugestões estratégicas.</b></p>
     </div>
+    
     <div class="service-card">
-      <img class="service-img" src="card-2-img.jpg" alt="Landing Page Example">
-      <h3>Landing Pages Profissionais</h3>
-      <p>Páginas otimizadas para conversão, com design exclusivo.</p>
+        <div class="service-icon">💻</div>
+        <h3>Criação de Landing Pages</h3>
+        <p>Landing pages estratégicas para captação de leads e campanhas.<br><b>Foco total em conversão.</b></p>
     </div>
-    <div class="service-card">
-      <img class="service-img" src="card-3-img.jpg" alt="Website Example">
-      <h3>Websites Sob Medida</h3>
-      <p>Sites completos, responsivos e com total propriedade digital.</p>
-    </div>
-  </div>
+    
+     <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3>Criação de Websites</h3>
+        <p>Sites institucionais modernos e profissionais.<br><b>Design responsivo e SEO básico.</b></p>
+     </div>
+
+     <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>Hospedagem & Manutenção</h3>
+        <p>Hospedagem confiável com suporte contínuo.<br><b>Você não se preocupa com nada técnico.</b></p>
+     </div>
+
+     <div class="service-card">
+        <div class="service-icon">📈</div>
+        <h3>Otimização & Performance</h3>
+        <p>Melhoramos sites existentes.<br><b>Mais velocidade e melhor experiência do usuário.</b></p>
+     </div>
+
+     <div class="service-card">
+        <div class="service-icon">🔄</div>
+        <h3>Suporte Contínuo</h3>
+        <p>Acompanhamento pós-entrega.<br><b>Ajustes finos e evolução do projeto.</b></p>
+     </div>
+
+   </div>
+
+   <!-- Indicadores -->
+   <div class="indicators-row">
+     <div class="indicator-card"><strong>100%</strong><br>Projetos entregues no prazo</div>
+     <div class="indicator-card"><strong>Alta</strong><br>Satisfação dos clientes</div>
+     <div class="indicator-card"><strong>+500</strong><br>Projetos realizados</div>
+   </div>
+
+</section>
+
+<section class="cta-section">
+   <h2 style="margin-bottom:.5em;">Precisa de um site profissional?</h2>
+   <p style="margin-bottom:.9em;">Entre em contato agora e receba um orçamento personalizado,<br>alinhado ao seu objetivo e ao seu público.</p>
+   <a href="#contato" class="cta-btn">Solicitar Orçamento</a>
 </section>
 
 <section class="about" id="sobre">
-  <h2>Sobre a AC Technology</h2>
-  <p>Somos especialistas em criar experiências digitais autênticas, focadas em performance e resultados reais. Ajudamos pequenos e médios negócios a conquistarem sua presença online com autonomia e qualidade.</p>
+   <h2>Sobre a AC Technology</h2>
+   <p style="max-width:700px;margin:auto;">
+     Somos especializados na criação de soluções digitais eficientes para pequenas e médias empresas que desejam crescer no ambiente online.<br><br>
+     Nosso trabalho vai além do design. Atuamos com estratégia, performance e clareza na comunicação.<br>Cada projeto é pensado para gerar valor real para o negócio do cliente.
+   </p>
+
+   <!-- Diferenciais -->
+   <div class="about-diffs-row">
+     <span class="about-diff-card">
+       <!-- SVG check -->
+       <svg fill="#4ad991" viewBox="0 0 20 20"><path d="M7.629 15.71a1.25 1.25 0 01-1.77-.04l-3.08-3.23a1.25 1.25 0 111.81-1.72l2.17 2.28L15.41 5.29a1.25 1.25 0 111.77 1.76L7.63 15.71z"/></svg>
+       Projetos sob medida
+     </span>
+     <span class="about-diff-card">
+       <svg fill="#4ad991" viewBox="0 0 20 20"><path d="M7.629 15.71a1.25 1.25 0 01-1.77-.04l-3.08-3.23a1.25 1.25 0 111.81-1.72l2.17 2.28L15.41 5.29a1.25 1.25 0 111.77 1.76L7.63 15.71z"/></svg>
+       Comunicação clara
+     </span>
+     <span class="about-diff-card">
+       <svg fill="#4ad991" viewBox="0 0 20 20"><path d="M7.629 15.71a1.25 1.25 0 01-1.77-.04l-3.08-3.23a1.25 1.25 0 111.81-1.72l2.17 2.28L15.41 5.29a1.25 1.25 0 111.77 1.76L7.63 15.71z"/></svg>
+       Entrega rápida
+     </span>
+     <span class="about-diff-card">
+       <svg fill="#4ad991" viewBox="0 0 20 20"><path d="M7.629 15.71a1.25 1.25 0 01-1.77-.04l-3.08-3.23a1.25 1.25 0 111.81-1.72l2.17 2.28L15.41 5.29a1.25 1.25 0 111.77 1.76L7.63 15.71z"/></svg>
+       Foco em resultados
+     </span>
+   </div>
+
 </section>
 
 <section class="reviews" id="avaliacoes">
-  <h2>O que dizem nossos clientes</h2>
-  <div class="reviews-cards">
-    <div class="review-card">
-      "A AC Technology transformou meu site! Atendimento excelente e resultado acima do esperado."<br><br><b>— Cliente 1</b>
-    </div>
-    <div class="review-card">
-      "Minha landing page ficou incrível e já aumentou minhas conversões."<br><br><b>— Cliente 2</b>
-    </div>
-  </div>
+   <h2>O que dizem nossos clientes</h2>
+   <div class="reviews-cards">
+     <div class="review-card">
+       “Meu site ficou exatamente como eu imaginava.<br>Profissional, rápido e bem estruturado.”
+       <b>— Cliente Satisfeito</b>
+     </div>
+     <div class="review-card">
+       “Excelente atendimento e entrega.<br>Recomendo para quem quer presença digital séria.”
+       <b>— Cliente Empresarial</b>
+     </div>
+     <div class="review-card">
+       “Conseguimos mais contatos depois da landing page.”
+       <b>— Cliente PME</b>
+     </div>
+   </div>
 </section>
 
 <section class="contact" id="contato">
-  <h2>Fale Conosco</h2>
-  <form>
-    <input type="text" placeholder="Nome" required>
-    <input type="email" placeholder="E-mail" required>
-    <textarea placeholder="Mensagem" required></textarea>
-    <button type="submit" class="cta-btn">Enviar</button>
-  </form>
+   <h2>Fale Conosco ou Visite Nossa Loja</h2>
+   <p style="margin-bottom:.6em;">
+     Estamos localizados no centro de Uberlândia.<br><b>Endereço:</b> R. Modelo do Brasil, 456 Centro<br>Uberlândia – MG CEP 38400-000<br><b>Telefone:</b> (34) 9 9222-1407<br><b>WhatsApp:</b> <a href="https://wa.me/5534992221407" target="_blank" style="color:#4ad991;text-decoration:none;">Iniciar conversa</a><br><b>Horário:</b>&nbsp;<span style='white-space:nowrap;'>Seg a Sex:&nbsp;09–18h | Sáb:&nbsp;09–12h</span><br><br>Ou preencha o formulário abaixo:
+   </p>
+
+   <form autocomplete="off">
+     <input type="text" placeholder="Nome" required name="nome" autocomplete="off">
+     <input type="email" placeholder="E-mail" required name="email" autocomplete="off">
+     <textarea placeholder="Mensagem" required name="mensagem"></textarea>
+     <button type="submit" class="cta-btn">Enviar</button>
+   </form>
+
 </section>
+
+<footer>
+   AC Technology – Soluções digitais sob medida para empresas que querem crescer online.<br>
+   Uberlândia – MG | Atendemos todo o Brasil<br>
+   © 2024 AC Technology.<span style='color:#4ad991;'> Todos os direitos reservados.</span>
+</footer>
 
 <script>
 // Suavidade extra ao rolar (opcional JS para suavizar âncoras em navegadores antigos)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
  anchor.addEventListener('click', function(e) {
-   e.preventDefault();
-   document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior:'smooth' });
+   const el = document.querySelector(this.getAttribute('href'));
+   if(el){
+     e.preventDefault();
+     el.scrollIntoView({ behavior:'smooth' });
+   }
  });
+});
+document.querySelector('.contact form')?.addEventListener('submit', function(e){
+   e.preventDefault();
+   alert('Mensagem enviada! Em breve entraremos em contato.');
+   this.reset();
 });
 </script>
 
