@@ -12,11 +12,8 @@
       --mid-blue: #3e5c76;
       --light-blue: #748cab;
       --beige: #f0ebd8;
-      --gradient: linear-gradient(135deg, #0d1321 0%, #1d2d44 50%, #3e5c76 100%);
     }
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: 'Montserrat', Arial, sans-serif;
@@ -24,18 +21,28 @@
       color: var(--beige);
     }
     header {
-      background: var(--gradient);
+      position: relative;
+      width: 100vw;
+      min-height: 350px;
+      height: 45vw;
+      max-height: 480px;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 350px;
-      padding-top: 40px;
+      background: url('https://raw.githubusercontent.com/paulorasjunior/ac-technology-site/main/header-img.png') center center/cover no-repeat;
+      box-shadow: 0 4px 24px rgba(13,19,33,0.10);
     }
-    .banner-img {
-      max-width: 600px;
-      width: 90vw;
-      margin-bottom: 30px;
+    .header-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(13,19,33,0.45); /* Suaviza o texto sobre o banner */
+      z-index: 1;
+    }
+    .header-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      width: 100%;
     }
     .cta-btn {
       background: var(--light-blue);
@@ -55,167 +62,118 @@
       transform: translateY(-3px) scale(1.04);
       box-shadow: 0 6px 24px rgba(13,19,33,0.18);
     }
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .services {
-      background: var(--mid-blue);
-    }
+    section { padding: 60px 20px; text-align: center; }
+    .services { background: var(--mid-blue); }
     .services-cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px;
     }
     .service-card {
-      background: var(--blue);
-      color: var(--beige);
-      border-radius: 16px;
-      padding: 30px 20px 20px 20px;
-      width: 320px;
+      background: var(--blue); color: var(--beige); border-radius: 16px;
+      padding: 30px 20px 20px 20px; width: 320px;
       box-shadow: 0 4px 24px rgba(13,19,33,0.15);
       transition: transform .3s, box-shadow .3s;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      display: flex; flex-direction: column; align-items: center;
     }
     .service-card:hover {
       transform: translateY(-6px) scale(1.03);
       box-shadow: 0 12px 32px rgba(13,19,33,0.22);
     }
     .service-img {
-      width: 100%;
-      max-width: 260px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 18px;
+      width: 100%; max-width: 260px; height: 140px; object-fit: cover;
+      border-radius: 10px; margin-bottom: 18px;
     }
-    .about {
-      background: var(--beige);
-      color: var(--dark-blue);
-    }
-    .reviews {
-      background: var(--light-blue);
-      color: var(--dark-blue);
-    }
+    .about { background: var(--beige); color: var(--dark-blue); }
+    .reviews { background: var(--light-blue); color: var(--dark-blue); }
     .reviews-cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px;
     }
     .review-card {
-      background: var(--beige);
-      color: var(--dark-blue);
-      border-radius: 16px;
-      padding: 25px 18px;
-      width: 280px;
-      transition: box-shadow .3s, transform .3s;
+      background: var(--beige); color: var(--dark-blue); border-radius: 16px;
+      padding: 25px 18px; width: 280px; transition: box-shadow .3s, transform .3s;
     }
     .review-card:hover {
-      box-shadow: 0 8px 28px rgba(13,19,33,0.18);
-      transform: scale(1.03);
+      box-shadow: 0 8px 28px rgba(13,19,33,0.18); transform: scale(1.03);
     }
-    .contact {
-      background: var(--blue);
-    }
-    form {
-      max-width: 400px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    input, textarea {
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      font-size: 1rem;
-    }
-    textarea { resize: vertical; min-height: 80px; }
-    input[type="submit"], button[type="submit"] {
-        transition: background .4s, transform .3s, box-shadow .3s;
-        cursor:pointer
-    }
-    input[type="submit"]:hover, button[type="submit"]:hover {
-        background-color:#f0ebd8;color:#0d1321;transform:scale(1.04)
-    }
+    .contact { background: var(--blue); }
+    form { max-width: 400px; margin:auto; display:flex; flex-direction:column; gap:15px;}
+    input, textarea { padding:12px; border-radius:8px; border:none; font-size:1rem;}
+    textarea { resize:vertical; min-height:80px;}
+    input[type="submit"], button[type="submit"] { transition:.4s;}
+    input[type="submit"]:hover, button[type="submit"]:hover { background-color:#f0ebd8;color:#0d1321;transform:scale(1.04)}
     @media (max-width:900px) {
-        .services-cards,.reviews-cards{flex-direction:column;align-items:center}
-        .service-card{width:95%}
-        .review-card{width:95%}
-        .banner-img{max-width:95vw}
+      header { height: 38vw; min-height:180px;}
+      .services-cards,.reviews-cards{flex-direction:column;align-items:center}
+      .service-card{width:95%}
+      .review-card{width:95%}
+    }
+    @media (max-width:600px) {
+      header { height:auto; min-height:120px;}
     }
   </style>
 </head>
 <body>
 <header id="home">
-   <!-- Banner da empresa -->
-   <img src="header-img.png" alt="Banner AC Technology" class="banner-img">
-   <a href="#contato"><button class="cta-btn">Solicite um Orçamento</button></a>
+  <div class="header-overlay"></div>
+  <div class="header-content">
+    <!-- Se quiser adicionar texto ou logo sobre o banner, coloque aqui -->
+    <a href="#contato"><button class="cta-btn">Solicite um Orçamento</button></a>
+  </div>
 </header>
 
 <section class="services" id="servicos">
-   <h2>Nossos Serviços</h2>
-   <div class="services-cards">
-     <!-- Exemplo de imagens do Behance (substitua pelos links/arquivos que preferir) -->
-     <div class="service-card">
-       <img class="service-img" src="card-1-img.jpg" alt="UI/UX Example">
-       <h3>Consultoria Digital</h3>
-       <p>Estratégias personalizadas para seu negócio crescer online.</p>
-     </div>
-     <div class="service-card">
-       <img class="service-img" src="card-2-img.jpg" alt="Landing Page Example">
-       <h3>Landing Pages Profissionais</h3>
-       <p>Páginas otimizadas para conversão, com design exclusivo.</p>
-     </div>
-     <div class="service-card">
-       <img class="service-img" src="card-3-img.jpg" alt="Website Example">
-       <h3>Websites Sob Medida</h3>
-       <p>Sites completos, responsivos e com total propriedade digital.</p>
-     </div>
-   </div>
+  <h2>Nossos Serviços</h2>
+  <div class="services-cards">
+    <div class="service-card">
+      <img class="service-img" src="card-1-img.jpg" alt="UI/UX Example">
+      <h3>Consultoria Digital</h3>
+      <p>Estratégias personalizadas para seu negócio crescer online.</p>
+    </div>
+    <div class="service-card">
+      <img class="service-img" src="card-2-img.jpg" alt="Landing Page Example">
+      <h3>Landing Pages Profissionais</h3>
+      <p>Páginas otimizadas para conversão, com design exclusivo.</p>
+    </div>
+    <div class="service-card">
+      <img class="service-img" src="card-3-img.jpg" alt="Website Example">
+      <h3>Websites Sob Medida</h3>
+      <p>Sites completos, responsivos e com total propriedade digital.</p>
+    </div>
+  </div>
 </section>
 
 <section class="about" id="sobre">
-   <h2>Sobre a AC Technology</h2>
-   <p>Somos especialistas em criar experiências digitais autênticas, focadas em performance e resultados reais. Ajudamos pequenos e médios negócios a conquistarem sua presença online com autonomia e qualidade.</p>
+  <h2>Sobre a AC Technology</h2>
+  <p>Somos especialistas em criar experiências digitais autênticas, focadas em performance e resultados reais. Ajudamos pequenos e médios negócios a conquistarem sua presença online com autonomia e qualidade.</p>
 </section>
 
 <section class="reviews" id="avaliacoes">
-   <h2>O que dizem nossos clientes</h2>
-   <div class="reviews-cards">
-     <div class="review-card">
-       "A AC Technology transformou meu site! Atendimento excelente e resultado acima do esperado."<br><br><b>— Cliente 1</b>
-     </div>
-     <div class="review-card">
-       "Minha landing page ficou incrível e já aumentou minhas conversões."<br><br><b>— Cliente 2</b>
-     </div>
-   </div>
+  <h2>O que dizem nossos clientes</h2>
+  <div class="reviews-cards">
+    <div class="review-card">
+      "A AC Technology transformou meu site! Atendimento excelente e resultado acima do esperado."<br><br><b>— Cliente 1</b>
+    </div>
+    <div class="review-card">
+      "Minha landing page ficou incrível e já aumentou minhas conversões."<br><br><b>— Cliente 2</b>
+    </div>
+  </div>
 </section>
 
 <section class="contact" id="contato">
-   <h2>Fale Conosco</h2>
-   <form>
-     <input type="text" placeholder="Nome" required>
-     <input type="email" placeholder="E-mail" required>
-     <textarea placeholder="Mensagem" required></textarea>
-     <button type="submit" class="cta-btn">Enviar</button>
-   </form>
+  <h2>Fale Conosco</h2>
+  <form>
+    <input type="text" placeholder="Nome" required>
+    <input type="email" placeholder="E-mail" required>
+    <textarea placeholder="Mensagem" required></textarea>
+    <button type="submit" class="cta-btn">Enviar</button>
+  </form>
 </section>
 
-<!-- Suavidade extra ao rolar (opcional JS para suavizar âncoras em navegadores antigos) -->
 <script>
+// Suavidade extra ao rolar (opcional JS para suavizar âncoras em navegadores antigos)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
  anchor.addEventListener('click', function(e) {
    e.preventDefault();
-   document.querySelector(this.getAttribute('href')).scrollIntoView({
-     behavior:'smooth'
-   });
+   document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior:'smooth' });
  });
 });
 </script>
