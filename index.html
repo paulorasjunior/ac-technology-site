@@ -14,7 +14,6 @@
       --beige: #f0ebd8;
       --green: #4ad991;
       --yellow: #ffe066;
-      --max-width: 1200px;
     }
     html { scroll-behavior: smooth; }
     body {
@@ -23,13 +22,12 @@
       background: var(--dark-blue);
       color: var(--beige);
     }
-    /* HEADER */
     header {
       position: relative;
       width: 100vw;
-      min-height: 420px;
-      height: 55vw;
-      max-height: 600px;
+      min-height: 380px;
+      height: 45vw;
+      max-height: 520px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -38,42 +36,39 @@
     }
     .header-overlay {
       position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(13,19,33,0.60);
+      background: rgba(13,19,33,0.55);
       z-index: 1;
     }
     .header-content {
       position: relative; z-index: 2; text-align: center; width: 100%;
       color: var(--beige);
       display:flex; flex-direction:column; align-items:center; justify-content:center;
-      max-width: var(--max-width); margin:auto; padding: 0 2vw;
     }
     .header-content h1 {
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      font-weight: bold;
-      margin-bottom: 18px;
-      letter-spacing:.5px;
-      line-height: 1.08;
+      font-size: 2.3rem; font-weight: bold; margin-bottom: 12px; letter-spacing:.5px;
     }
     .header-content p {
-      font-size: clamp(1.15rem,2vw,1.35rem);
-      margin-bottom: 32px;
-      max-width:600px;
-      margin-left:auto; margin-right:auto;
-      line-height:1.6;
+      font-size: 1.15rem; margin-bottom: 18px; max-width:600px; margin-left:auto; margin-right:auto;
+    }
+    .header-badges {
+      display:flex; gap:18px; justify-content:center; margin-bottom:18px; flex-wrap:wrap;
+    }
+    .header-badge {
+      background: rgba(255,255,255,0.10); border-radius:20px; padding:7px 18px; font-size:.98rem; display:flex; align-items:center; gap:7px;
     }
     .header-cta-group {
-      display:flex; gap:22px; justify-content:center; margin-bottom:28px; flex-wrap:wrap;
+      display:flex; gap:16px; justify-content:center; margin-bottom:18px; flex-wrap:wrap;
     }
     .cta-btn, .whatsapp-btn {
       background: var(--light-blue);
       color: var(--dark-blue);
       border:none;
-      padding: 18px 48px;
-      border-radius: 32px;
-      font-size: 1.15rem;
+      padding: 15px 38px;
+      border-radius: 30px;
+      font-size: 1rem;
       font-weight:bold;
       cursor:pointer;
-      transition:.25s cubic-bezier(.4,0,.2,1);
+      transition:.3s;
       box-shadow:0 2px 12px rgba(13,19,33,0.10);
       text-decoration:none;
       display:inline-block;
@@ -85,142 +80,81 @@
       box-shadow:0 6px 24px rgba(13,19,33,0.18);
     }
     .whatsapp-btn {
-      background:#25D366;color:#fff;padding-left:38px;padding-right:38px;position:relative;
+      background:#25D366;color:#fff;padding-left:32px;padding-right:32px;position:relative;
     }
     .whatsapp-btn::before {
       content:"";
       display:inline-block;
-      width:22px;height:22px;background:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg') no-repeat center/contain;
-      vertical-align:-4px;margin-right:10px;filter:brightness(0) invert(1);
-    }
-    .header-badges {
-      display:flex; gap:18px; justify-content:center; margin-bottom:18px; flex-wrap:wrap; opacity:.92;
-    }
-    .header-badge {
-      background: rgba(255,255,255,0.10); border-radius:20px; padding:7px 18px; font-size:.98rem; display:flex; align-items:center; gap:7px;
+      width:20px;height:20px;background:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg') no-repeat center/contain;
+      vertical-align:-4px;margin-right:8px;filter:brightness(0) invert(1);
     }
     .header-hours {font-size:.98rem;color:#e6e6e6;}
-    
-    /* SECTION WRAPPER */
-    section { 
-        padding-top:70px; padding-bottom:70px; 
-        text-align:center; 
-        max-width: var(--max-width); 
-        margin:auto; 
-        padding-left:2vw; padding-right:2vw;
-    }
-    h2 {font-size:clamp(2rem,4vw,2.7rem);margin-bottom:.7em;font-weight:bold;}
-    
-    /* SERVICES GRID */
+    section { padding:60px 20px; text-align:center;}
+    h2 {font-size:2rem;margin-bottom:.7em;}
+    /* Serviços */
     .services { background: var(--mid-blue);}
     .services-cards {
-        display:grid; 
-        grid-template-columns: repeat(3,1fr); 
-        gap:40px; 
-        margin-top:40px; 
-        justify-items:center;
-        align-items:start;
-        width:100%;
-        max-width:none;
-    }
-    @media (max-width:1100px) {
-        .services-cards { grid-template-columns: repeat(2,1fr);}
-    }
-    @media (max-width:700px) {
-        .services-cards { grid-template-columns:1fr;}
-        section {padding-top:38px;padding-bottom:38px;}
-        .header-content h1 {font-size:2rem;}
-        h2{font-size:1.3em;}
+      display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:30px;
     }
     .service-card {
-        background: var(--blue); color: var(--beige); border-radius:22px;
-        padding:44px 28px 32px 28px; width:min(100%,340px);
-        box-shadow:0 8px 32px rgba(13,19,33,0.16);
-        transition:.25s cubic-bezier(.4,0,.2,1);
-        display:flex; flex-direction:column; align-items:center;
-        min-height:320px;
-        opacity:.96;
-        position:relative;
-        overflow:hidden;
-        will-change:transform,box-shadow;
-        animation:fadey .8s both cubic-bezier(.4,0,.2,1);
+      background: var(--blue); color: var(--beige); border-radius:16px;
+      padding:30px 22px 22px 22px; width:320px;
+      box-shadow:0 4px 24px rgba(13,19,33,0.15);
+      transition:.3s;
+      display:flex; flex-direction:column; align-items:center;
     }
-    @keyframes fadey { from{opacity:.3;transform:translateY(30px);} to{opacity:.96;transform:none;} }
-    .service-card:hover {
-        transform:translateY(-8px) scale(1.025);
-        box-shadow:0 16px 48px rgba(13,19,33,.22);
-        z-index:2;
-        opacity:.99
-    }
-    .service-icon {
-        font-size:3rem;margin-bottom:.9em;background:#fff2;border-radius:.7em;padding:.35em;color:#3e5c76;width:auto;height:auto;display:inline-block
-    }
-    .service-card h3 {margin-bottom:.5em;font-size:1.25em;font-weight:bold;}
-    
-    /* INDICATORS */
+    .service-card:hover {transform:translateY(-6px) scale(1.03);box-shadow:0 12px 32px rgba(13,19,33,0.22);}
+    .service-icon {font-size:2.5rem;margin-bottom:.7em;}
+    .service-card h3 {margin-bottom:.5em;}
+    /* Indicadores/Diferenciais */
     .indicators-row {
-        display:flex; gap:30px; justify-content:center; flex-wrap:wrap;margin-top:40px;margin-bottom:-10px;width:auto
+      display:flex; gap:30px; justify-content:center; flex-wrap:wrap;margin-top:30px;margin-bottom:-10px;
     }
     .indicator-card {
-        background:#fff2;border-radius:14px;padding:28px 36px;color:#fff;font-weight:bold;font-size:.98rem;min-width:min(220px,90vw);text-align:center;border-left:4px solid var(--green);box-shadow:0 2px 12px rgba(13,19,33,.08);margin-bottom:.5em
+      background:#fff2;border-radius:14px;padding:22px 28px;color:#fff;font-weight:bold;font-size:.98rem;min-width:180px;text-align:center;border-left:4px solid var(--green);box-shadow:0 2px 12px rgba(13,19,33,.08);
     }
     .indicator-card strong {font-size:1.5em;color:#4ad991;}
-    
     /* CTA intermediário */
-    .cta-section {background:#fff1;border-radius:22px;padding-top:48px;padding-bottom:48px;margin-top:-30px;margin-bottom:-30px;}
-    
-    /* SOBRE */
+    .cta-section {background:#fff1;border-radius:18px;padding:36px 18px;margin-top:-30px;margin-bottom:-30px;}
+    /* Sobre */
     .about {background:#f0ebd8;color:#0d1321;}
     .about-diffs-row {
-        display:flex;gap:24px;justify-content:center;margin-top:38px;margin-bottom:-10px;flex-wrap:wrap;width:auto
+      display:flex;gap:24px;justify-content:center;margin-top:28px;margin-bottom:-10px;flex-wrap:wrap;
     }
     .about-diff-card {
-        background:#fff9;border-radius:14px;padding:22px 24px;color:#222;font-size:.98rem;width:min(220px,90vw);box-shadow:0 2px 12px rgba(13,19,33,.07);display:flex;align-items:center;gap:.7em;font-weight:bold;margin-bottom:.5em
+      background:#fff9;border-radius:12px;padding:18px 20px;color:#222;font-size:.98rem;width:min(220px,90vw);box-shadow:0 2px 12px rgba(13,19,33,.07);display:flex;align-items:center;gap:.7em;font-weight:bold;margin-bottom:.5em;
     }
     .about-diff-card svg {width:22px;height:auto;}
-    
-    /* DEPOIMENTOS */
+    /* Depoimentos */
     .reviews {background:#748cab;color:#0d1321;}
-    .reviews-cards {display:flex;flex-wrap:wrap;justify-content:center;gap:36px;margin-top:40px;}
+    .reviews-cards {display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-top:30px;}
     .review-card {
-        background:#f0ebd8;color:#0d1321;border-radius:16px;padding:32px 24px;width:min(340px,95vw);transition:.3s;font-style:italic;font-size:.99rem;border-left:.25em solid var(--light-blue);box-shadow:0 4px 24px rgba(13,19,33,.10);margin-bottom:.5em
+      background:#f0ebd8;color:#0d1321;border-radius:16px;padding:25px 18px;width:min(320px,95vw);transition:.3s;font-style:italic;font-size:.99rem;border-left:.25em solid var(--light-blue);box-shadow:0 4px 24px rgba(13,19,33,.10);
     }
     .review-card b {display:block;margin-top:.8em;font-style:normal;}
-    
-    /* CONTATO */
+    /* Contato */
     .contact {background:#1d2d44;}
-    form {max-width:min(420px,95vw);margin:auto;display:flex;flex-direction:column;gap:18px;}
-    input, textarea {padding:16px;border-radius:8px;border:none;font-size:.98rem;}
+    form {max-width:400px;margin:auto;display:flex;flex-direction:column;gap:15px;}
+    input, textarea {padding:12px;border-radius:8px;border:none;font-size:1rem;}
     textarea {resize:vertical;min-height:80px;}
-    
     input[type="submit"], button[type="submit"] {transition:.4s;}
-    input[type="submit"]:hover,
-     button[type="submit"]:hover {background-color:#f0ebd8;color:#0d1321;transform:scale(1.04)}
-    
-    /* FOOTER */
+    input[type="submit"]:hover, button[type="submit"]:hover {background-color:#f0ebd8;color:#0d1321;transform:scale(1.04)}
+    /* Footer */
     footer {
-        background:#101522;color:#f0ebd8;text-align:center;padding-top:.9em;padding-bottom:.9em;font-size:.98rem;margin-top:-10px;border-top:.5em solid var(--mid-blue);
-        letter-spacing:.01em
-     }
-
-     /* MOBILE ADJUSTMENTS */
-     @media (max-width:900px) {
-       header {height:auto;min-height:180px;}
-       section{padding-left:.5em;padding-right:.5em;}
-       .services-cards,.reviews-cards,.indicators-row,.about-diffs-row{flex-direction:column !important;display:flex !important;}
-       .service-card,.review-card,.indicator-card{width:min(95vw,340px);}
-     }
-     @media (max-width:600px) {
-       header {height:auto;min-height:120px;}
-       section{padding-top:.7em;padding-bottom:.7em;}
-       h2{font-size:.98em;}
-       .header-content h1{font-size:min(2em,7vw);}
-       .service-card{padding-left:.7em;padding-right:.7em;}
-     }
-     /* Fade-in animation for cards on scroll (optional) */
-     [data-animate] { opacity:.01; transform:none !important;}
-     [data-animate].visible { opacity:.96 !important; transition:.7s cubic-bezier(.4,0,.2,1);}
-     
+      background:#101522;color:#f0ebd8;text-align:center;padding-top:.9em;padding-bottom:.9em;font-size:.98rem;margin-top:-10px;
+      border-top:.5em solid var(--mid-blue);
+    }
+    /* Responsivo */
+    @media (max-width:900px) {
+      header {height:auto;min-height:180px;}
+      .services-cards,.reviews-cards,.indicators-row,.about-diffs-row{flex-direction:column;align-items:center}
+      .service-card,.review-card,.indicator-card{width:min(95vw,340px);}
+    }
+    @media (max-width:600px) {
+      header {height:auto;min-height:120px;}
+      section{padding-left:.5em;padding-right:.5em;}
+      h2{font-size:1.3em;}
+    }
   </style>
 </head>
 <body>
@@ -228,18 +162,18 @@
 <header id="home">
   <div class="header-overlay"></div>
   <div class="header-content">
-    <h1>Especialistas em Criação de Sites<br>e Landing Pages Profissionais</h1>
+    <h1>Especialistas em Criação de Sites e Landing Pages Profissionais</h1>
     <p>Soluções digitais sob medida para empresas que querem <b>mais visibilidade</b>, <b>mais autoridade</b> e <b>mais conversões online</b>. Desenvolvemos sites rápidos, modernos e focados em resultados reais para o seu negócio.</p>
-    
-    <div class="header-cta-group">
-        <a href="#contato" class="cta-btn">Solicitar Orçamento</a>
-        <a href="https://wa.me/5534992221407" target="_blank" class="whatsapp-btn">Falar no WhatsApp</a>
-    </div>
     
     <div class="header-badges">
         <span class="header-badge">⭐⭐⭐⭐⭐ Projetos avaliados positivamente</span>
         <span class="header-badge">📍 Uberlândia – MG e todo o Brasil</span>
         <span class="header-badge"><b>500+</b> projetos entregues</span>
+    </div>
+    
+    <div class="header-cta-group">
+        <a href="#contato" class="cta-btn">Solicitar Orçamento</a>
+        <a href="https://wa.me/5534992221407" target="_blank" class="whatsapp-btn">Falar no WhatsApp</a>
     </div>
     
     <div class="header-hours">
@@ -254,37 +188,37 @@
   
   <div class="services-cards">
     
-    <div class="service-card" data-animate>
+    <div class="service-card">
         <div class="service-icon">🧪</div>
         <h3>Diagnóstico Gratuito</h3>
         <p>Análise inicial do seu site ou ideia digital.<br><b>Pontos de melhoria e sugestões estratégicas.</b></p>
     </div>
     
-    <div class="service-card" data-animate>
+    <div class="service-card">
         <div class="service-icon">💻</div>
         <h3>Criação de Landing Pages</h3>
         <p>Landing pages estratégicas para captação de leads e campanhas.<br><b>Foco total em conversão.</b></p>
     </div>
     
-     <div class="service-card" data-animate>
+     <div class="service-card">
         <div class="service-icon">🌐</div>
         <h3>Criação de Websites</h3>
         <p>Sites institucionais modernos e profissionais.<br><b>Design responsivo e SEO básico.</b></p>
      </div>
 
-     <div class="service-card" data-animate>
+     <div class="service-card">
         <div class="service-icon">⚙️</div>
         <h3>Hospedagem & Manutenção</h3>
         <p>Hospedagem confiável com suporte contínuo.<br><b>Você não se preocupa com nada técnico.</b></p>
      </div>
 
-     <div class="service-card" data-animate>
+     <div class="service-card">
         <div class="service-icon">📈</div>
         <h3>Otimização & Performance</h3>
         <p>Melhoramos sites existentes.<br><b>Mais velocidade e melhor experiência do usuário.</b></p>
      </div>
 
-     <div class="service-card" data-animate>
+     <div class="service-card">
         <div class="service-icon">🔄</div>
         <h3>Suporte Contínuo</h3>
         <p>Acompanhamento pós-entrega.<br><b>Ajustes finos e evolução do projeto.</b></p>
@@ -309,7 +243,7 @@
 
 <section class="about" id="sobre">
    <h2>Sobre a AC Technology</h2>
-   <p style="max-width:min(700px,95vw);margin:auto;">
+   <p style="max-width:700px;margin:auto;">
      Somos especializados na criação de soluções digitais eficientes para pequenas e médias empresas que desejam crescer no ambiente online.<br><br>
      Nosso trabalho vai além do design. Atuamos com estratégia, performance e clareza na comunicação.<br>Cada projeto é pensado para gerar valor real para o negócio do cliente.
    </p>
@@ -340,15 +274,15 @@
 <section class="reviews" id="avaliacoes">
    <h2>O que dizem nossos clientes</h2>
    <div class="reviews-cards">
-     <div class="review-card" data-animate>
+     <div class="review-card">
        “Meu site ficou exatamente como eu imaginava.<br>Profissional, rápido e bem estruturado.”
        <b>— Cliente Satisfeito</b>
      </div>
-     <div class="review-card" data-animate>
+     <div class="review-card">
        “Excelente atendimento e entrega.<br>Recomendo para quem quer presença digital séria.”
        <b>— Cliente Empresarial</b>
      </div>
-     <div class="review-card" data-animate>
+     <div class="review-card">
        “Conseguimos mais contatos depois da landing page.”
        <b>— Cliente PME</b>
      </div>
@@ -392,19 +326,6 @@ document.querySelector('.contact form')?.addEventListener('submit', function(e){
    alert('Mensagem enviada! Em breve entraremos em contato.');
    this.reset();
 });
-
-// Fade-in animation for cards on scroll (opcional)
-function animateOnScroll() {
- const els = document.querySelectorAll('[data-animate]');
- const trigger = window.innerHeight * .92;
- els.forEach(el=>{
-   const rect = el.getBoundingClientRect();
-   if(rect.top<trigger) el.classList.add('visible');
- });
-}
-window.addEventListener('scroll', animateOnScroll);
-window.addEventListener('DOMContentLoaded', animateOnScroll);
-
 </script>
 
 </body>
