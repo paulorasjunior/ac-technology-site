@@ -1,14 +1,14 @@
 # AC Technology – Landing Page Institucional
 
 Landing page institucional da **AC Technology**, desenvolvida para apresentar serviços de
-criação de **sites e landing pages profissionais**, com foco em **performance, conversão
-e resultados reais** para pequenos e médios negócios.
+consultoria e criação de **Landing Pages e Websites** profissionais, com foco em 
+**autenticidade, performance e propriedade digital** para pequenos e médios negócios.
 
 ---
 
 ## 🎯 Objetivo do Projeto
 
-Criar uma landing page simples, rápida e profissional para:
+Criar uma Landing Page, rápida e profissional para:
 - Apresentar os serviços da AC Technology
 - Transmitir credibilidade e profissionalismo
 - Destacar diferenciais e processo de trabalho
@@ -91,8 +91,7 @@ O site está disponível em:
 
 ## 📄 Licença
 
-Este projeto é de propriedade da **AC Technology** e está protegido por direitos
-autorais.
+Este projeto é de propriedade da **AC Technology** e está protegido por direitos autorais.
 
 O código e o conteúdo são disponibilizados exclusivamente para fins de
 demonstração e portfólio.  
