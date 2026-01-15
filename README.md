@@ -85,7 +85,7 @@ Referências:
 ## 🌐 Como acessar o site
 
 O site está disponível em:
-👉 https://actechnology.github.io/ac-technology-site/
+👉 https://paulorasjunior.github.io/ac-technology-site/
 
 ---
 
