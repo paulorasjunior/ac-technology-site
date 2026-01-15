@@ -7,426 +7,310 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --dark-blue: #0d1321;
-      --blue: #1d2d44;
-      --mid-blue: #3e5c76;
-      --light-blue: #748cab;
-      --beige: #f0ebd8;
-      --green: #4ad991;
-      --accent: #25D366;
+      --dark-bg: #0a0c1b;
+      --deep-blue: #181c2f;
+      --neon-green: #4ad991;
+      --neon-blue: #3e8cff;
+      --neon-purple: #a259ff;
+      --white: #f0ebd8;
+      --gray: #bfc9d1;
     }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: 'Montserrat', Arial, sans-serif;
-      background: var(--dark-blue);
-      color: var(--beige);
+      color: var(--white);
+      min-height: 100vh;
+      /* Gradiente animado */
+      background: linear-gradient(120deg, #181c2f 0%, #0a0c1b 100%);
+      background-size: 200% 200%;
+      animation: gradientMove 8s ease-in-out infinite;
+    }
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    /* Logo centralizada */
+    .logo-top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 32px;
+      padding-bottom: 12px;
+    }
+    .logo-top img {
+      width: 120px;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 32px #0008;
+      background: #fff;
     }
     /* MENU FIXO */
     nav {
-      position: fixed;
+      position: sticky;
       top: 0; left: 0; right: 0;
-      background: rgba(13,19,33,0.98);
+      background: rgba(10,12,27,0.98);
       box-shadow: 0 2px 16px rgba(13,19,33,0.10);
       z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.7em 2em;
-      animation: fadeInDown .7s cubic-bezier(.4,1.4,.6,1) both;
+      display: flex; align-items: center; justify-content: center;
+      gap: 2em; padding: .7em 2em;
     }
-    @keyframes fadeInDown {
-      from { opacity:0; transform:translateY(-40px);}
-      to { opacity:1; transform:none;}
-    }
-    .logo {
-      font-weight: bold;
-      font-size: 1.3em;
-      letter-spacing: .5px;
-      color: var(--green);
-    }
-    .nav-links {
-      display:flex; gap:2em; align-items:center;
-    }
+    .nav-links { display:flex; gap:2em; align-items:center; }
     .nav-links a {
-      color: var(--beige);
-      text-decoration:none;
-      font-weight:bold;
-      transition:.2s;
-      padding-bottom:.2em;
+      color: var(--gray); text-decoration:none; font-weight:bold; transition:.2s; padding-bottom:.2em; font-size:1.08em;
     }
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--green);
-      border-bottom:2px solid var(--green);
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--neon-green); border-bottom:2px solid var(--neon-green);
     }
     .nav-cta {
-      background: var(--green);
-      color: var(--dark-blue);
-      border:none;
-      border-radius:22px;
-      padding:.7em 1.7em;
-      font-weight:bold;
-      margin-left:1em;
-      cursor:pointer;
-      box-shadow:0 2px 12px rgba(13,19,33,0.10);
-      transition:.3s;
+      background: linear-gradient(90deg,var(--neon-green),var(--neon-blue));
+      color:#181c2f; border:none; border-radius:22px; padding:.7em 1.7em; font-weight:bold; margin-left:.7em; cursor:pointer; box-shadow:0 2px 12px #0004; transition:.3s;
     }
-    .nav-cta:hover { background: var(--beige); color:var(--dark-blue);}
+    .nav-cta:hover { background: linear-gradient(90deg,var(--neon-purple),var(--neon-green)); color:#fff;}
+    /* HERO */
     header {
-      position: relative;
-      width: 100vw;
-      min-height: 350px;
-      height: 45vw;
-      max-height: 480px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80') center center/cover no-repeat;
-      box-shadow: 0 4px 24px rgba(13,19,33,0.10);
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      min-height:340px; padding-top:40px; padding-bottom:40px;
+      position:relative; z-index:1;
     }
-    .header-overlay {
-      position: absolute; top:0; left:0; right:0; bottom:0;
-      background: linear-gradient(120deg,rgba(13,19,33,.65) 60%,rgba(58,92,118,.55) 100%);
-      z-index:1;
-    }
-    /* HERO CONTENT */
     .hero-content {
-      max-width: 900px;
-      margin: -120px auto 0 auto;
-      background: rgba(13,19,33,0.96);
-      border-radius: 28px;
-      box-shadow: 0 8px 32px rgba(13,19,33,0.18);
-      padding: 48px 24px 36px 24px;
-      text-align: center;
-      position: relative; z-index:10;
-      animation:bounceInUp .9s cubic-bezier(.4,1.4,.6,1) both .2s;
-    }
-    @keyframes bounceInUp {
-        from { opacity:.2; transform:translateY(80px);}
-        to { opacity:1; transform:none;}
+      max-width:700px; margin:auto; background:rgba(24,28,47,.92);
+      border-radius:28px; box-shadow:0 8px 32px #0006;
+      padding:48px 24px 36px 24px; text-align:center; position:relative; z-index:10;
+      backdrop-filter: blur(2px);
     }
     .hero-content h1 {
-      font-size: 2.7rem; font-weight:bold; margin-bottom:.5em; letter-spacing:.5px; color:#fff;
+      font-size:2.5rem;font-weight:bold;margin-bottom:.5em;color:#fff;text-shadow:0 2px 12px #0006;
     }
     .hero-content p {
-      font-size:1.25rem; margin-bottom:.9em; max-width:600px; margin-left:auto;margin-right:auto;color:#e6e6e6
+      font-size:1.18rem;margin-bottom:.9em;color:#bfc9d1;text-shadow:none;
     }
     .header-badges {
-      display:flex; gap:18px; justify-content:center; margin-bottom:.9em; flex-wrap:wrap;
-    }
-    .header-badge {
-      background: rgba(255,255,255,0.10);
-      border-radius:20px; padding:.5em 1.3em; font-size:.98rem; display:flex; align-items:center; gap:.5em;color:#fff
-    }
-    .header-cta-group {
       display:flex; gap:.9em; justify-content:center; margin-bottom:.9em; flex-wrap:wrap;
     }
+    .header-badge {
+      background: linear-gradient(90deg,#232a4d,#181c2f); border-radius:20px; padding:.5em 1.3em; font-size:.98rem; display:flex; align-items:center; gap:.5em;color:#fff;border-left:.25em solid var(--neon-green);
+    }
+    .header-cta-group { display:flex; gap:.9em; justify-content:center; margin-bottom:.9em; flex-wrap:wrap;}
     .cta-btn, .whatsapp-btn {
-      background-image:
-        linear-gradient(90deg,var(--green) 0%,var(--light-blue) 100%);
-      color:#fff;border:none;padding:.95em 2.5em;border-radius:30px;font-size:1.08rem;font-weight:bold;cursor:pointer;transition:.3s;box-shadow:0 2px 12px rgba(13,19,33,.10);text-decoration:none;display:inline-block;position:relative;overflow:hidden
+      background-image: linear-gradient(90deg,var(--neon-green) 0%,var(--neon-blue) 100%);
+      color:#fff;border:none;padding:.95em 2.5em;border-radius:30px;font-size:1.08rem;font-weight:bold;cursor:pointer;transition:.3s;text-decoration:none;display:inline-block;position:relative;overflow:hidden
     }
-    .cta-btn::after,.whatsapp-btn::after{
-        content:"";position:absolute;width:120%;height:.5em;background:
-        linear-gradient(90deg,#fff8,#fff2);top:-10px;left:-10%;opacity:.15;transform:
-        rotate(-8deg);transition:.4s
-    }
-    .cta-btn:hover::after,.whatsapp-btn:hover::after{opacity:.35;}
     .cta-btn:hover,.whatsapp-btn:hover{
-        background-image:
-        linear-gradient(90deg,var(--beige) 0%,var(--light-blue) 100%);
-        color:#222;transform:
-        translateY(-3px) scale(1.04);box-shadow:
-        0 6px 24px rgba(13,19,33,.18)
+      background-image: linear-gradient(90deg,var(--neon-purple) 0%,var(--neon-green) 100%);
+      color:#fff;transform: translateY(-3px) scale(1.04);box-shadow:0 6px 24px #0006
     }
     .whatsapp-btn {background:#25D366;color:#fff;padding-left:32px;padding-right:32px;}
     .whatsapp-btn::before {
-        content:"";display:inline-block;width:20px;height:20px;background:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg') no-repeat center/contain;vertical-align:-4px;margin-right:.5em;filter:
-        brightness(0) invert(1);
+      content:"";display:inline-block;width:20px;height:20px;background:url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg') no-repeat center/contain;vertical-align:-4px;margin-right:.5em;filter: brightness(0) invert(1);
     }
-    .header-hours {font-size:.98rem;color:#e6e6e6;}
-    section { padding:60px 20px;text-align:center;}
-    h2 {font-size:2rem;margin-bottom:.7em;}
-    /* Clientes Atendidos */
-    .clients {background:#f0ebd8;color:#222;}
-    .clients-logos{display:flex;gap:30px;justify-content:center;margin-top:
-        18px;flex-wrap:
-        wrap;}
-    .clients-logos img{height:
-        38px;width:auto;filter:
-        grayscale(.7) brightness(.9);opacity:.85;transition:.3s;}
-    .clients-logos img:hover{filter:none;opacity:
-        1;}
+    .header-hours {font-size:.98rem;color:#bfc9d1;}
+    section {padding-top:60px;padding-bottom:60px;text-align:center;}
+    h2 {font-size:2rem;margin-bottom:.7em;color:#fff;}
     /* Serviços */
-    .services { background:
-        var(--mid-blue);}
-    .services-cards { display:flex; flex-wrap:
-        wrap; justify-content:center; gap:
-        30px;margin-top:
-        30px;}
-    .service-card { background:
-        var(--blue); color:
-        var(--beige); border-radius:
-        16px;padding:
-        30px
-        22px
-        22px
-        22px;width:
-        320px;box-shadow:
-        0
-        4px
-        24px
-        rgba(13,19,33,.15);transition:.3s;display:flex;flex-direction:
-        column;align-items:center;position:
-        relative;}
-    .service-card:hover{transform:
-        translateY(-8px)
-        scale(1.04);box-shadow:
-        0
-        12px
-        32px
-        rgba(13,19,33,.22);}
-    .service-img{width:
-        100%;max-width:
-        220px;height:
-        120px;object-fit:
-        contain;border-radius:
-        10px;margin-bottom:
-        18px;background:#fff;}
-    .service-card h3{margin-bottom:.5em;}
+    .services-cards {display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-top:30px;}
+    .service-card {
+      background:#181c2f;color:#fff;border-radius:16px;padding:30px 22px;width:320px;
+      box-shadow:0 4px 24px #0008;transition:.3s;display:flex;flex-direction:column;align-items:center;border-top:.25em solid var(--neon-blue);
+    }
+    .service-card:hover{transform:translateY(-8px) scale(1.04);box-shadow:0 12px 32px #000a;border-top-color:var(--neon-green);}
+    .service-img{width:100%;max-width:220px;height:120px;object-fit:contain;border-radius:10px;margin-bottom:18px;background:#fff;}
     /* Sobre */
-    .about{background:#f0ebd8;color:#0d1321;}
+    .about{background:none;color:#fff;}
     /* Depoimentos */
-    .reviews{background:#748cab;color:#0d1321;}
-    .reviews-cards{display:flex;flex-wrap:
-        wrap;justify-content:center;gap:
-        30px;margin-top:
-        30px;}
-    .review-card{background:#f0ebd8;color:#0d1321;border-radius:
-        16px;padding:
-        25px
-        18px;width:min(320px,
-            95vw);transition:.3s;font-style:
-            italic;font-size:.99rem;border-left:.25em solid var(--light-blue);box-shadow:
-            0
-            4px
-            24px
-            rgba(13,19,33,.10);display:none;}
-    .review-card.active{display:block;}
-    .review-card b{display:block;margin-top:.8em;font-style:
-            normal;}
-    /* Carrossel Depoimentos */
-    .carousel-dots{display:flex;gap:.7em;margin-top:.7em;justify-content:center;}
-    .carousel-dot{width:.9em;height:.9em;border-radius:
-            50%;background:#bbb;border:none;padding:
-            0;margin:
-            0
-            !important;cursor:pointer;border:
-            none;}
-    .carousel-dot.active{background:
-            var(--green);}
+    .reviews{background:none;color:#fff;}
+    .reviews-cards{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-top:30px;}
+    .review-card{
+      background:#232a4d;color:#fff;border-radius:16px;padding:25px 18px;width:min(320px,95vw);transition:.3s;font-style:italic;font-size:.99rem;border-left:.25em solid var(--neon-purple);box-shadow:0 4px 24px #0006;margin-bottom:.7em
+    }
+    .review-card b{display:block;margin-top:.8em;font-style:normal;}
     /* Contato */
-    .contact{background:#1d2d44;}
-    form{max-width:
-            400px;margin:auto;display:flex;flex-direction:
-            column;gap:
-            15px;}
-    input,
-            textarea{padding:
-            12px;border-radius:
-            8px;border:none;font-size:
-            1rem;}
-    textarea{resize:
-            vertical;min-height:
-            80px;}
-    input[type="submit"],
-            button[type="submit"]{transition:.4s;}
-    input[type="submit"]:hover,
-            button[type="submit"]:hover{background-color:#f0ebd8;color:#0d1321;transform:
-            scale(1.04)}
-    /* Feedback visual */
-    .form-success{
-            background:#4ad99122;color:#222;padding:.7em;border-radius:
-            8px;margin-bottom:.7em;font-weight:bold;border-left:.25em solid var(--green);animation:pulseSuccess
-            .7s;}
-@keyframes pulseSuccess{
-from{opacity:.2;}to{opacity:1;}
-}
-footer{
-background:#101522;color:#f0ebd8;text-align:center;padding-top:.9em;padding-bottom:.9em;font-size:.98rem;margin-top:-10px;border-top:.5em solid var(--mid-blue);}
-@media (max-width:900px){
-nav{padding-left:.5em;padding-right:.5em;}
-header{height:auto;min-height:180px;}
-.services-cards,.reviews-cards,.clients-logos{flex-direction:column;align-items:center}
-.service-card,.review-card{width:min(95vw,340px);}
-.hero-content{margin:-60px auto
-0 auto;padding-left:.5em;padding-right:.5em;}
-}
-@media (max-width:600px){
-nav{flex-direction:column;padding-top:.7em;padding-bottom:.7em;}
-.nav-links{gap:.7em;margin-top:.5em;}
-header{height:auto;min-height:120px;}
-section{padding-left:.5em;padding-right:.5em;}
-h2{font-size:1.3em;}
-.hero-content{padding-left:.5em;padding-right:.5em;}
-}
-</style>
+    .contact{background:none;}
+    form{max-width:400px;margin:auto;display:flex;flex-direction:column;gap:15px;}
+    input, textarea{padding:12px;border-radius:8px;border:none;font-size:1rem;background:#232a4d;color:#fff;}
+    textarea{resize:vertical;min-height:80px;}
+    input[type="submit"], button[type="submit"]{transition:.4s;}
+    input[type="submit"]:hover, button[type="submit"]:hover{background-color:#4ad991;color:#181c2f;}
+    /* Footer */
+    footer{
+      background:#181c2f;color:#bfc9d1;text-align:center;padding-top:.9em;padding-bottom:.9em;font-size:.98rem;margin-top:-10px;border-top:.5em solid var(--neon-blue);
+      letter-spacing:.5px
+    }
+    /* WhatsApp Flutuante */
+    .whatsapp-float{
+      position:fixed;
+      right:24px;
+      bottom:24px;
+      z-index:9999;
+      background:#25D366;
+      color:#fff;
+      border-radius:50%;
+      width:62px;height:62px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 6px 32px #000a;
+      cursor:pointer;
+      animation:bounceInFloat .7s cubic-bezier(.4,1.4,.6,1) both,.pulseFloat 1.5s infinite alternate;
+      transition:.3s
+    }
+    @keyframes bounceInFloat{from{opacity:.2;transform:scale(.7);}to{opacity:.98;transform:none}}
+    @keyframes pulseFloat{from{box-shadow:0 6px 32px #000a;}to{box-shadow:0 0 32px #25D36688}}
+    .whatsapp-float svg{width:32px;height:auto;}
+    
+    /* Transições suaves entre seções */
+    section:not(:first-child)::before{
+        content:"";
+        display:block;
+        width:min(180px,60vw);
+        height:.18em;
+        margin:auto auto 36px auto;
+        border-radius:.18em;
+        background-image:
+          linear-gradient(90deg,var(--neon-green),var(--neon-blue),var(--neon-purple));
+        opacity:.45
+     }
+
+     /* Responsivo */
+     @media (max-width:900px){
+       nav{padding-left:.5em;padding-right:.5em;}
+       header{min-height:auto;padding-top:.7em;padding-bottom:.7em;}
+       .services-cards,.reviews-cards{flex-direction:column;align-items:center}
+       .service-card,.review-card{width:min(95vw,340px);}
+       .hero-content{padding-left:.5em;padding-right:.5em;}
+     }
+     @media (max-width:600px){
+       nav{flex-direction:column;padding-top:.7em;padding-bottom:.7em;}
+       .nav-links{gap:.7em;margin-top:.5em;}
+       section{padding-left:.5em;padding-right:.5em;}
+       h2{font-size:1.3em;}
+       .hero-content{padding-left:.5em;padding-right:.5em;}
+       .logo-top img { width:min(80vw,140px);}
+     }
+   </style>
 </head>
 <body>
+<!-- LOGO -->
+<div class="logo-top">
+   <img src="https://977099015297-genai-file-ingestor-v2-bucket.s3.amazonaws.com/01K4WVF8JV44VY7BQ4Y73TTDY3/CONTEXT/01KF1MD8NHVN5VPCPHY84T3WQ5/logotipo-img.png" alt="Logo AC Technology">
+</div>
+<!-- MENU -->
 <nav>
-<span class="logo">AC Technology</span>
-<div class="nav-links">
-<a href="#home" class="active">Início</a>
-<a href="#servicos">Serviços</a>
-<a href="#sobre">Sobre</a>
-<a href="#avaliacoes">Depoimentos</a>
-<a href="#contato">Contato</a>
-<button class="nav-cta" onclick="document.querySelector('#contato').scrollIntoView({behavior:'smooth'})">Orçamento</button>
-</div>
+ <div class="nav-links">
+   <a href="#home" class="active">Início</a>
+   <a href="#servicos">Serviços</a>
+   <a href="#sobre">Sobre</a>
+   <a href="#avaliacoes">Depoimentos</a>
+   <a href="#contato">Contato</a>
+   <button class="nav-cta" onclick="document.querySelector('#contato').scrollIntoView({behavior:'smooth'})">Orçamento</button>
+ </div>
 </nav>
-<header id="home">
-<div class="header-overlay"></div>
-</header>
-<section class="hero-content">
-<h1>Seu negócio digital no próximo nível 🚀</h1>
-<p>Transformamos ideias em <b>resultados reais</b>! Sites e landing pages profissionais para empresas que buscam <b>autoridade</b>, <b>visibilidade</b> e <b>conversão</b>.</p>
-<div class="header-badges">
-<span class="header-badge">⭐⭐⭐⭐⭐ +500 projetos entregues</span>
-<span class="header-badge">98% satisfação dos clientes</span>
-<span class="header-badge">Atendemos todo o Brasil</span>
-</div>
-<div class="header-cta-group">
-<a href="#contato" class="cta-btn">Quero crescer online!</a>
-<a href="https://wa.me/5534992221407" target="_blank" class="whatsapp-btn">Falar no WhatsApp</a>
-</div>
-<div class="header-hours">
-<b>Horário:</b> Seg a Sex:&nbsp;09h–18h | Sáb:&nbsp;09h–12h
-</div>
-</section>
 
-<section class="clients">
-<h2>Clientes que confiam</h2>
-<div class="clients-logos">
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Cliente Nike" title="Cliente Nike">
-<!-- Troque por logos reais dos clientes -->
-</div>
-</section>
+<header id="home">
+ <section class="hero-content">
+   <h1>Seu negócio digital no próximo nível 🚀</h1>
+   <p>Transformamos ideias em <b>resultados reais</b>! Sites e landing pages profissionais para empresas que buscam <b>autoridade</b>, <b>visibilidade</b> e <b>conversão</b>.</p>
+   <div class="header-badges">
+     <span class="header-badge">⭐⭐⭐⭐⭐ +500 projetos entregues</span>
+     <span class="header-badge">98% satisfação dos clientes</span>
+     <span class="header-badge">Atendemos todo o Brasil</span>
+   </div>
+   <div class="header-cta-group">
+     <a href="#contato" class="cta-btn">Quero crescer online!</a>
+     <a href="https://wa.me/5534992221407" target="_blank" class="whatsapp-btn">Falar no WhatsApp</a>
+   </div>
+   <div class="header-hours">
+     <b>Horário:</b> Seg a Sex:&nbsp;09h–18h | Sáb:&nbsp;09h–12h
+   </div>
+ </section>
+</header>
 
 <section class="services" id="servicos">
-<h2>Nossos Serviços</h2>
-<div class="services-cards">
-<div class="service-card">
-<img class="service-img" src="card-1-img.png" alt="Consultoria Digital">
-<h3>Consultoria Digital</h3>
-<p>Soluções personalizadas para impulsionar sua presença online e gerar resultados.</p>
-</div>
-<div class="service-card">
-<img class="service-img" src="card-2-img.png" alt="Landing Page Profissional">
-<h3>Landing Pages Profissionais</h3>
-<p>Páginas que convertem visitantes em clientes com design exclusivo e performance máxima.</p>
-</div>
-<div class="service-card">
-<img class="service-img" src="card-3-img.png" alt="Websites Sob Medida">
-<h3>Websites Sob Medida</h3>
-<p>Sites completos e responsivos para sua empresa se destacar no digital.</p>
-</div>
-</div>
+ <h2>Nossos Serviços</h2>
+ <div class="services-cards">
+   <div class="service-card">
+     <img class="service-img" src="https://undraw.co/api/illustrations/undraw_online_ad_re_ol62.svg" alt="Consultoria Digital">
+     <h3>Consultoria Digital</h3>
+     <p>Soluções personalizadas para impulsionar sua presença online e gerar resultados.</p>
+   </div>
+   <div class="service-card">
+     <img class="service-img" src="https://undraw.co/api/illustrations/undraw_landing_page_q6hh.svg" alt="Landing Page Profissional">
+     <h3>Landing Pages Profissionais</h3>
+     <p>Páginas que convertem visitantes em clientes com design exclusivo e performance máxima.</p>
+   </div>
+   <div class="service-card">
+     <img class="service-img" src="https://undraw.co/api/illustrations/undraw_websites_6k3v.svg" alt="Websites Sob Medida">
+     <h3>Websites Sob Medida</h3>
+     <p>Sites completos e responsivos para sua empresa se destacar no digital.</p>
+   </div>
+ </div>
 </section>
 
 <section class="about" id="sobre">
-<h2>Sobre a AC Technology</h2>
-<p>Somos especialistas em criar experiências digitais autênticas e de alta performance.<br>Ajudamos negócios a crescer online com autonomia e qualidade.</p>
+ <h2>Sobre a AC Technology</h2>
+ <p>Somos especialistas em criar experiências digitais autênticas e de alta performance.<br>Ajudamos negócios a crescer online com autonomia e qualidade.</p>
 </section>
 
 <section class="reviews" id="avaliacoes">
-<h2>O que dizem nossos clientes</h2>
-<div class="reviews-cards">
-<div class="review-card active">
-“Profissionalismo e resultado! Meu site ficou incrível e já trouxe novos clientes.”<br><br><b>— Maria Oliveira<br><span style='font-weight:normal'>Fundadora da Loja Y</span></b>
-</div>
-<div class="review-card">
-“Equipe atenciosa e entrega rápida! Recomendo para quem quer crescer online.”<br><br><b>— João Silva<br><span style='font-weight:normal'>CEO da Empresa X</span></b>
-</div>
-<div class="review-card">
-“Minha landing page ficou linda e aumentou minhas conversões em poucos dias.”<br><br><b>— Carla Souza<br><span style='font-weight:normal'>Empreendedora Digital</span></b>
-</div>
-</div>
-<div class="carousel-dots"></div>
+ <h2>O que dizem nossos clientes</h2>
+ <div class="reviews-cards">
+   <div class="review-card">“Profissionalismo e resultado! Meu site ficou incrível e já trouxe novos clientes.”<br><br><b>— Maria Oliveira<br><span style='font-weight:normal'>Fundadora da Loja Y</span></b></div>
+   <div class="review-card">“Equipe atenciosa e entrega rápida! Recomendo para quem quer crescer online.”<br><br><b>— João Silva<br><span style='font-weight:normal'>CEO da Empresa X</span></b></div>
+   <div class="review-card">“Minha landing page ficou linda e aumentou minhas conversões em poucos dias.”<br><br><b>— Carla Souza<br><span style='font-weight:normal'>Empreendedora Digital</span></b></div>
+ </div>
 </section>
 
 <section class="contact" id="contato">
-<h2>Fale Conosco</h2>
-<form autocomplete="off">
-<div id="form-success" style="display:none"></div>
-<input type="text" placeholder="Seu nome completo" required name="nome" autocomplete="off">
-<input type="email" placeholder="Seu melhor e-mail" required name="email" autocomplete="off">
-<textarea placeholder="Como podemos ajudar seu negócio?" required name="mensagem"></textarea>
-<button type="submit" class="cta-btn">Enviar mensagem</button>
-</form>
+ <h2>Fale Conosco</h2>
+ <form autocomplete="off">
+   <input type="text" placeholder="Seu nome completo" required name="nome" autocomplete="off">
+   <input type="email" placeholder="Seu melhor e-mail" required name="email" autocomplete="off">
+   <textarea placeholder="Como podemos ajudar seu negócio?" required name="mensagem"></textarea>
+   <button type="submit" class="cta-btn">Enviar mensagem</button>
+ </form>
 </section>
 
 <footer>
-AC Technology – Soluções digitais sob medida para empresas que querem crescer online.<br>
-Uberlândia – MG | Atendemos todo o Brasil<br>
-© 2024 AC Technology.<span style='color:#4ad991;'> Todos os direitos reservados.</span>
+ AC Technology – Soluções digitais sob medida para empresas que querem crescer online.<br>
+ Uberlândia – MG | Atendemos todo o Brasil<br>
+ © 2024 AC Technology.<span style='color:#4ad991;'> Todos os direitos reservados.</span>
 </footer>
+
+<!-- Botão WhatsApp Flutuante -->
+<a href="https://wa.me/5534992221407" target="_blank" class="whatsapp-float" title="Fale no WhatsApp">
+ <!-- SVG do ícone WhatsApp -->
+ <svg viewBox="0 0 32 32"><path fill="#fff" d="M16.001.667C7.527.667.667,7.527.667,16c0,3.021.885,5.927,2.561,8.432L.667,31.333l7.09-2.527C10.073,30.448,13.001,31.333,16.001,31.333c8.474,0,15.334-6.86,15.334-15.333C31.335,7.527,24.475.667,16.001.667Zm0,28c-2.813,0-5.563-.792-7.927-2.292l-.567-.354-4.208,1.495L5.13,25.26l-.365-.547C3.07,22.417,2.334,19.25,2.334,16c0-7.514,6.153-13.667,13.667-13.667S29.668,8.486,29.668,16c0,7.514-6.153,13.667-13.667,13.667Zm7-9c-.385-.192-2.271-1.125-2.623-1.25-.353-.125-.611-.192-.87,.192-.258,.385-.997,1.25-1.223,1.51-.226,.258-.451,.289-.836,.096-.385-.192-1.625-.599-3.096-1.91-1.144-1.021-1.916-2.281-2.143-2.666-.226-.385-.024-.593,.17-.785,.175-.174,.385-.451,.578-.677,.192-.226,.256-.385,.385-.641,.128-.256,.064-.481-.032-.673-.096-.192-.87-2.099-1.192-2.875-.314-.755-.635-.652-.87-.664l-.74-.013c-.257,.001-.673,.096-1.025,.481s-1.345,1.314-1.345,3.201c0,.448,.08,.896,.241,1.344,.385,.993,1.217,1.949,2.497,2.872C11.68,21.06,14.,22.,14.,22c3.,0.,6.,-3.,6.,-6.,C20.,13.,17.,10.,14.,10.,Z"/></svg>
+</a>
 
 <script>
 // Menu ativo ao rolar
 const navLinks = document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll', () => {
-let fromTop = window.scrollY + window.innerHeight * .15;
-navLinks.forEach(link => {
-let section = document.querySelector(link.getAttribute('href'));
-if(section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop){
-navLinks.forEach(l=>l.classList.remove('active'));
-link.classList.add('active');
-}
+ let fromTop = window.scrollY + window.innerHeight * .15;
+ navLinks.forEach(link => {
+   let section = document.querySelector(link.getAttribute('href'));
+   if(section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop){
+     navLinks.forEach(l=>l.classList.remove('active'));
+     link.classList.add('active');
+   }
+ });
 });
-});
-
-// Carrossel depoimentos
-const reviews = document.querySelectorAll('.review-card');
-const dotsContainer = document.querySelector('.carousel-dots');
-let currentReview = 0;
-
-function showReview(idx){
-reviews.forEach((r,i)=>r.classList.toggle('active',i===idx));
-[...dotsContainer.children].forEach((d,i)=>d.classList.toggle('active',i===idx));
-}
-function nextReview(){
-currentReview = (currentReview+1)%reviews.length;
-showReview(currentReview);
-}
-reviews.forEach((_,i)=>{
-let dot = document.createElement('button');
-dot.className = 'carousel-dot'+(i===0?' active':'');
-dot.onclick = ()=>{currentReview=i;showReview(i);}
-dotsContainer.appendChild(dot);
-});
-setInterval(nextReview,5000);
-
 // Suavidade extra ao rolar (opcional JS para suavizar âncoras em navegadores antigos)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function(e) {
-const el = document.querySelector(this.getAttribute('href'));
-if(el){
-e.preventDefault();
-el.scrollIntoView({ behavior:'smooth' });
-}
+ anchor.addEventListener('click', function(e) {
+   const el = document.querySelector(this.getAttribute('href'));
+   if(el){
+     e.preventDefault();
+     el.scrollIntoView({ behavior:'smooth' });
+   }
+ });
 });
-});
-
 // Formulário com feedback visual moderno
 document.querySelector('.contact form')?.addEventListener('submit', function(e){
-e.preventDefault();
-const msg = document.getElementById('form-success');
-msg.innerHTML = "Mensagem enviada! Em breve entraremos em contato.";
-msg.className = "form-success";
-msg.style.display = "block";
-setTimeout(()=>msg.style.display='none',4000);
-this.reset();
+ e.preventDefault();
+ alert('Mensagem enviada! Em breve entraremos em contato.');
+ this.reset();
 });
 </script>
 
